@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaalan Parturi — Barber Shop · Vaala</title>
+  <meta name="description" content="Vaalan Parturi on klassinen parturi Vaalan sydämessä. Tarkat leikkaukset, parranajot kuumalla pyyhkeellä ja rento tunnelma. Varaa aikasi.">
+  <meta name="theme-color" content="#F6F1E6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D0806" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Vaalan Parturi — Barber Shop">
+  <meta property="og:description" content="Klassinen parturi Vaalan sydämessä. Tarkkaa työtä, rennolla otteella.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/logo-light.jpg">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-normal-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-italic-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/manrope-normal-latin.woff2">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Apply saved theme before first paint to avoid a flash
+    (function () {
+      try {
+        var t = localStorage.getItem('vp-theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "Vaalan Parturi",
+    "description": "Klassinen parturi Vaalan sydämessä.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Asematie 1",
+      "postalCode": "91700",
+      "addressLocality": "Vaala",
+      "addressCountry": "FI"
+    },
+    "telephone": "+358466379131",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "15:00" }
+    ],
+    "priceRange": "€€"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ======================= PRELOADER ======================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <svg class="loader-ring" viewBox="0 0 120 120" fill="none">
+        <circle class="loader-ring-track" cx="60" cy="60" r="54" stroke-width="1.5"/>
+        <circle class="loader-ring-draw" cx="60" cy="60" r="54" stroke-width="1.5"/>
+      </svg>
+      <img class="loader-badge" src="assets/img/badge-light-sm.png" alt="" width="88" height="88">
+    </div>
+    <p class="loader-word">Vaalan Parturi</p>
+  </div>
+
+  <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
+
+  <!-- ======================= NAV ======================= -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#hero" aria-label="Vaalan Parturi — etusivu">
+        <img class="nav-badge nav-badge--light" src="assets/img/badge-light-sm.png" alt="" width="40" height="40">
+        <img class="nav-badge nav-badge--dark" src="assets/img/badge-dark-sm.png" alt="" width="40" height="40">
+        <span class="nav-word">Vaalan<em>Parturi</em></span>
+      </a>
+      <nav class="nav-links" aria-label="Päävalikko">
+        <a href="#palvelut">Palvelut</a>
+        <a href="#hinnasto">Hinnasto</a>
+        <a href="#meista">Meistä</a>
+        <a href="#yhteys">Yhteystiedot</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Vaihda tumma tai vaalea tila" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4.4"/>
+            <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.2 14.5A8.3 8.3 0 0 1 9.5 3.8a8.3 8.3 0 1 0 10.7 10.7Z"/>
+          </svg>
+        </button>
+        <a class="btn btn--solid nav-cta" href="#yhteys" data-magnetic>Varaa aika</a>
+        <button class="burger" id="burger" type="button" aria-label="Avaa valikko" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================= MOBILE MENU ======================= -->
+  <div class="mmenu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Valikko" aria-hidden="true">
+    <nav class="mmenu-links" aria-label="Mobiilivalikko">
+      <a href="#palvelut"><span>01</span>Palvelut</a>
+      <a href="#hinnasto"><span>02</span>Hinnasto</a>
+      <a href="#meista"><span>03</span>Meistä</a>
+      <a href="#yhteys"><span>04</span>Yhteystiedot</a>
+    </nav>
+    <div class="mmenu-foot">
+      <a class="btn btn--solid" href="#yhteys">Varaa aika</a>
+      <p>Asematie 1 · 91700 Vaala</p>
+    </div>
+  </div>
+
+  <main id="sisalto" tabindex="-1">
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <video class="hero-video" id="heroVideo" muted loop playsinline preload="none"></video>
+        <div class="hero-spot hero-spot--a"></div>
+        <div class="hero-spot hero-spot--b"></div>
+        <svg class="hero-ring" id="heroRing" viewBox="0 0 600 600" fill="none">
+          <defs>
+            <path id="ringPath" d="M300,300 m-232,0 a232,232 0 1,1 464,0 a232,232 0 1,1 -464,0"/>
+          </defs>
+          <circle cx="300" cy="300" r="268" class="hero-ring-line"/>
+          <circle cx="300" cy="300" r="196" class="hero-ring-line"/>
+          <text class="hero-ring-text">
+            <textPath href="#ringPath" startOffset="0">VAALAN PARTURI · BARBER SHOP · ESTD 2026 · VAALA · SUOMI · VAALAN PARTURI · BARBER SHOP · ESTD 2026 ·</textPath>
+          </text>
+        </svg>
+      </div>
+
+      <div class="hero-pole" aria-hidden="true">
+        <div class="hero-pole-cap"></div>
+        <div class="hero-pole-glass"><div class="hero-pole-stripes"></div></div>
+        <div class="hero-pole-cap"></div>
+      </div>
+
+      <div class="hero-content container">
+        <p class="hero-eyebrow" data-hero-fade>Parturi · Barber Shop · Vaala</p>
+        <h1 class="hero-title" aria-label="Vaalan Parturi">
+          <span class="hero-line" aria-hidden="true">
+            <span class="ht-l">V</span><span class="ht-l">A</span><span class="ht-l">A</span><span class="ht-l">L</span><span class="ht-l">A</span><span class="ht-l">N</span>
+          </span>
+          <span class="hero-line hero-line--em" aria-hidden="true">
+            <span class="ht-l">P</span><span class="ht-l">a</span><span class="ht-l">r</span><span class="ht-l">t</span><span class="ht-l">u</span><span class="ht-l">r</span><span class="ht-l">i</span><span class="ht-l ht-dot">.</span>
+          </span>
+        </h1>
+        <p class="hero-tagline" data-hero-fade>Tarkkaa työtä, rennolla otteella.<br>Klassinen parturi Vaalan sydämessä — vuodesta 2026.</p>
+        <div class="hero-ctas" data-hero-fade>
+          <a class="btn btn--solid btn--lg" href="#yhteys" data-magnetic>Varaa aika</a>
+          <a class="btn btn--ghost btn--lg" href="#palvelut" data-magnetic>Katso palvelut</a>
+        </div>
+      </div>
+
+      <div class="hero-scrollcue" aria-hidden="true">
+        <span>Selaa</span>
+        <div class="hero-scrollcue-line"><i></i></div>
+      </div>
+    </section>
+
+    <!-- ======================= MARQUEE 1 ======================= -->
+    <div class="marquee" data-marquee-dir="1" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-chunk">
+          <span>Tarkkuus</span><i>·</i><em>Perinne</em><i>·</i><span>Tyyli</span><i>·</i><em>Vaala</em><i>·</i><span>Estd 2026</span><i>·</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================= PALVELUT ======================= -->
+    <section class="services" id="palvelut">
+      <div class="services-pin" id="servicesPin">
+        <div class="services-head container">
+          <p class="eyebrow" data-reveal>Palvelut</p>
+          <h2 class="h2" data-reveal>Penkkiin. <em>Loput hoituu.</em></h2>
+          <p class="section-sub" data-reveal>Jokainen käynti alkaa keskustelulla ja päättyy viimeisteltyyn lopputulokseen. Vedä tai selaa sivuttain.</p>
+        </div>
+        <div class="services-viewport" id="servicesViewport">
+          <div class="services-track" id="servicesTrack">
+
+            <article class="svc-card">
+              <span class="svc-num">01</span>
+              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="46" r="7"/>
+                <circle cx="18" cy="18" r="7"/>
+                <path d="M24 23 52 51M24 41 52 13M52 51l4 4M52 13l4-4"/>
+              </svg>
+              <h3>Klassinen leikkaus</h3>
+              <p>Saksilla ja koneella, pesu ja muotoilu päälle. Istuvuus, joka kestää arjen.</p>
+              <span class="svc-price">28&nbsp;€</span>
+            </article>
+
+            <article class="svc-card">
+              <span class="svc-num">02</span>
+              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="22" y="18" width="20" height="34" rx="6"/>
+                <path d="M24 18v-4h16v4M26 8h12M28 8v6M32 8v6M36 8v6M28 30h8M28 38h8"/>
+              </svg>
+              <h3>Koneajo</h3>
+              <p>Nopea ja siisti koko pään koneajo yhdellä terällä.</p>
+              <span class="svc-price">20&nbsp;€</span>
+            </article>
+
+            <article class="svc-card">
+              <span class="svc-num">03</span>
+              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 10 2 16 12 22 10-6 12-12 12-22"/>
+                <path d="M32 32v10M26 38c0 8 2 12 6 16 4-4 6-8 6-16"/>
+                <path d="M22 26c-4 2-6 6-6 10M42 26c4 2 6 6 6 10"/>
+              </svg>
+              <h3>Parran muotoilu</h3>
+              <p>Rajaus, tasaus ja hoitoöljy. Parta, jolla on suunta.</p>
+              <span class="svc-price">22&nbsp;€</span>
+            </article>
+
+            <article class="svc-card">
+              <span class="svc-num">04</span>
+              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="13" r="4"/>
+                <circle cx="11" cy="29" r="4"/>
+                <path d="M14.5 15.5 27 26.5M14.5 26.5 27 15.5"/>
+                <path d="M32 26v12M26 32h12"/>
+                <path d="M40 36c0 10 4 15 9 15s9-5 9-15M40 36c0-4 2-7 4-7M58 36c0-4-2-7-4-7M45 33c1.5-2 6.5-2 8 0"/>
+              </svg>
+              <h3>Leikkaus + parta</h3>
+              <p>Koko paketti samalla käynnillä: hiukset, parta ja viimeistely.</p>
+              <span class="svc-price">45&nbsp;€</span>
+            </article>
+
+            <article class="svc-card">
+              <span class="svc-num">05</span>
+              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 40h44v6a8 8 0 0 1-8 8H18a8 8 0 0 1-8-8Z"/>
+                <path d="M18 40c0-6 4-8 14-8s14 2 14 8"/>
+                <path d="M24 22c0-3 2-3 2-6M32 22c0-3 2-3 2-6M40 22c0-3 2-3 2-6"/>
+              </svg>
+              <h3>Perinteinen parranajo</h3>
+              <p>Parranajo veitsellä — kuuma pyyhe, esivoiteet ja rauha.</p>
+              <span class="svc-price">35&nbsp;€</span>
+            </article>
+
+            <article class="svc-card">
+              <span class="svc-num">06</span>
+              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="32" cy="26" r="12"/>
+                <path d="M22 20c2-6 18-6 20 0M26 16v-5M32 15V9M38 16v-5"/>
+                <path d="M16 54c2-9 8-13 16-13s14 4 16 13"/>
+              </svg>
+              <h3>Lasten leikkaus</h3>
+              <p>Alle 12-vuotiaille. Kärsivällisyydellä ja huumorilla.</p>
+              <span class="svc-price">18&nbsp;€</span>
+            </article>
+
+            <article class="svc-card svc-card--cta">
+              <p>Valmiina<br><em>penkkiin?</em></p>
+              <a class="btn btn--solid" href="#yhteys" data-magnetic>Varaa aika</a>
+            </article>
+
+          </div>
+        </div>
+        <div class="services-progress" aria-hidden="true"><i id="servicesProgress"></i></div>
+      </div>
+    </section>
+
+    <!-- ======================= TARKKUUS (scroll-scrub cut) ======================= -->
+    <section class="cut" id="tarkkuus">
+      <div class="cut-pin" id="cutPin">
+        <p class="eyebrow cut-kicker">Jälki, joka näkyy</p>
+        <div class="cut-stage">
+          <svg class="cut-svg" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <defs>
+              <filter id="roughEdge" x="-5%" y="-20%" width="110%" height="140%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.012 0.09" numOctaves="2" seed="7" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+              <clipPath id="cutReveal">
+                <rect id="cutRect" x="0" y="0" width="1200" height="340"/>
+              </clipPath>
+            </defs>
+            <text class="cut-text cut-text--clean" x="600" y="252" text-anchor="middle">TARKKUUS</text>
+            <g clip-path="url(#cutReveal)">
+              <text class="cut-text cut-text--rough" x="600" y="252" text-anchor="middle" filter="url(#roughEdge)">TARKKUUS</text>
+            </g>
+            <g id="hairBits" class="hair-bits"></g>
+          </svg>
+          <div class="clipper" id="clipper" aria-hidden="true">
+            <svg viewBox="0 0 90 200" fill="none">
+              <path class="clipper-teeth" d="M12 12v-8M22 12v-8M32 12v-8M42 12v-8M52 12v-8M62 12v-8M72 12v-8" stroke-width="4" stroke-linecap="round"/>
+              <path class="clipper-blade" d="M8 12h68l-4 18H14Z"/>
+              <path class="clipper-body" d="M14 30h56c4 0 6 3 5.5 7l-9 138c-.5 5-4 9-9.5 9H28c-5.5 0-9-4-9.5-9l-9-138c-.5-4 1.5-7 5.5-7Z"/>
+              <rect class="clipper-grip" x="26" y="62" width="38" height="5" rx="2.5"/>
+              <rect class="clipper-grip" x="27" y="78" width="36" height="5" rx="2.5"/>
+              <rect class="clipper-grip" x="28" y="94" width="34" height="5" rx="2.5"/>
+              <circle class="clipper-screw" cx="45" cy="132" r="7"/>
+            </svg>
+          </div>
+        </div>
+        <p class="cut-note">Selaa — leikkuri hoitaa loput.</p>
+      </div>
+    </section>
+
+    <!-- ======================= HINNASTO ======================= -->
+    <section class="prices section" id="hinnasto">
+      <div class="container container--narrow">
+        <p class="eyebrow" data-reveal>Hinnasto</p>
+        <h2 class="h2" data-reveal>Selkeät hinnat, <em>ei yllätyksiä.</em></h2>
+        <ul class="price-list">
+          <li class="price-row" data-reveal><span class="price-name">Klassinen leikkaus</span><span class="price-dots"></span><span class="price-val">28&nbsp;€</span></li>
+          <li class="price-row" data-reveal><span class="price-name">Mallinmuutosleikkaus</span><span class="price-dots"></span><span class="price-val">32&nbsp;€</span></li>
+          <li class="price-row" data-reveal><span class="price-name">Koneajo (yksi terä)</span><span class="price-dots"></span><span class="price-val">20&nbsp;€</span></li>
+          <li class="price-row" data-reveal><span class="price-name">Parran muotoilu</span><span class="price-dots"></span><span class="price-val">22&nbsp;€</span></li>
+          <li class="price-row" data-reveal><span class="price-name">Parranajo kuumalla pyyhkeellä</span><span class="price-dots"></span><span class="price-val">35&nbsp;€</span></li>
+          <li class="price-row" data-reveal><span class="price-name">Leikkaus + parta</span><span class="price-dots"></span><span class="price-val">45&nbsp;€</span></li>
+          <li class="price-row" data-reveal><span class="price-name">Lasten leikkaus <small>(alle 12 v.)</small></span><span class="price-dots"></span><span class="price-val">18&nbsp;€</span></li>
+          <li class="price-row" data-reveal><span class="price-name">Eläkeläisleikkaus</span><span class="price-dots"></span><span class="price-val">22&nbsp;€</span></li>
+          <li class="price-row" data-reveal><span class="price-name">Siistiminen <small>(niska &amp; pulisongit)</small></span><span class="price-dots"></span><span class="price-val">12&nbsp;€</span></li>
+        </ul>
+        <p class="price-note" data-reveal>Hinnat sisältävät alv:n. Maksutavat: kortti, käteinen ja MobilePay.</p>
+      </div>
+    </section>
+
+    <!-- ======================= MARQUEE 2 ======================= -->
+    <div class="marquee marquee--alt" data-marquee-dir="-1" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-chunk">
+          <span>Hiukset</span><i>·</i><em>Parta</em><i>·</i><span>Kuuma pyyhe</span><i>·</i><em>Klassikot</em><i>·</i><span>Vaalan Parturi</span><i>·</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================= MEISTÄ ======================= -->
+    <section class="about section" id="meista">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="eyebrow" data-reveal>Meistä</p>
+          <h2 class="h2" data-reveal>Parturi Vaalan <em>sydämessä.</em></h2>
+          <p class="about-lead" data-reveal-lines>Vaalan Parturi on paikka, jossa aika hidastuu tuolin ääressä. Meille jokainen asiakas on naapuri — ja jokainen leikkaus käyntikortti.</p>
+          <p class="about-body" data-reveal-lines>Teemme klassista parturityötä modernilla otteella: tarkat rajaukset, huolellinen viimeistely ja rehellinen neuvo siitä, mikä juuri sinulle sopii. Penkkiin istutaan puhumaan — tai olemaan puhumatta.</p>
+          <ul class="values">
+            <li data-reveal>
+              <span class="value-num">01</span>
+              <div><h3>Tarkkuus</h3><p>Millimetrit ratkaisevat. Emme päästä penkistä keskeneräistä työtä.</p></div>
+            </li>
+            <li data-reveal>
+              <span class="value-num">02</span>
+              <div><h3>Perinne</h3><p>Kuuma pyyhe, veitsiajo ja saksityö. Opit, jotka eivät vanhene.</p></div>
+            </li>
+            <li data-reveal>
+              <span class="value-num">03</span>
+              <div><h3>Kiireettömyys</h3><p>Jokaiselle asiakkaalle varataan aikaa. Penkissä ei vilkuilla kelloa.</p></div>
+            </li>
+          </ul>
+        </div>
+        <div class="about-visual" data-speed="0.92">
+          <div class="about-frame" data-reveal>
+            <svg class="chair-svg" viewBox="0 0 320 420" fill="none" aria-hidden="true">
+              <ellipse class="chair-shadow" cx="160" cy="396" rx="110" ry="12"/>
+              <path class="chair-line" d="M104 60c0-26 112-26 112 0l-6 96H110Z"/>
+              <path class="chair-fill" d="M118 40c8-14 76-14 84 0l-4 18h-76Z"/>
+              <path class="chair-line" d="M96 156h128l10 44c2 10-4 18-14 18H100c-10 0-16-8-14-18Z"/>
+              <path class="chair-arm" d="M74 160c-10 0-16 10-12 20l10 26h22l-8-46Z"/>
+              <path class="chair-arm" d="M246 160c10 0 16 10 12 20l-10 26h-22l8-46Z"/>
+              <path class="chair-line" d="M146 218h28v34h-28z"/>
+              <path class="chair-line" d="M108 252h104l6 22H102Z"/>
+              <path class="chair-pole" d="M152 274h16v66h-16z"/>
+              <path class="chair-line" d="M104 358c0-12 112-12 112 0l6 24H98Z"/>
+              <path class="chair-accent" d="M100 168h120l3 14H97Z"/>
+            </svg>
+            <div class="about-frame-ring" aria-hidden="true"></div>
+            <img class="about-frame-badge" src="assets/img/badge-dark-sm.png" alt="Vaalan Parturi -logo" width="92" height="92" loading="lazy">
+          </div>
+          <p class="about-caption" data-reveal>Penkki odottaa. <em>Estd 2026.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= TYYLIT ======================= -->
+    <section class="styles section" id="tyylit">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Tyylit</p>
+        <h2 class="h2" data-reveal>Klassikot ja <em>uudet leikkaukset.</em></h2>
+        <div class="styles-grid">
+          <a class="style-card" href="#yhteys" data-speed="0.96" data-gallery="1">
+            <span class="style-index">Nº 1</span>
+            <h3 class="style-name">Klassikko</h3>
+            <p>Siisti sivujako, saksilla viimeistelty.</p>
+            <span class="style-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="style-card" href="#yhteys" data-speed="1.06" data-gallery="2">
+            <span class="style-index">Nº 2</span>
+            <h3 class="style-name">Häivytys</h3>
+            <p>Skin fade — tarkat, saumattomat siirtymät.</p>
+            <span class="style-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="style-card" href="#yhteys" data-speed="0.92" data-gallery="3">
+            <span class="style-index">Nº 3</span>
+            <h3 class="style-name">Tekstuuri</h3>
+            <p>Kevyt, eläväinen pituus päälle.</p>
+            <span class="style-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="style-card" href="#yhteys" data-speed="1.1" data-gallery="4">
+            <span class="style-index">Nº 4</span>
+            <h3 class="style-name">Täysparta</h3>
+            <p>Muotoiltu, hoidettu ja rajattu linja.</p>
+            <span class="style-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= YHTEYS ======================= -->
+    <section class="contact section" id="yhteys">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Yhteystiedot</p>
+        <h2 class="contact-title" data-reveal>Varaa <em>aika.</em></h2>
+        <p class="section-sub" data-reveal>Soita, laita viestiä tai poikkea kysymään vapaata aikaa.</p>
+        <div class="contact-cta" data-reveal>
+          <a class="btn btn--solid btn--xl" href="tel:+358466379131" data-magnetic>Soita: 046&nbsp;637&nbsp;91&nbsp;31</a>
+          <a class="btn btn--ghost btn--xl" href="mailto:info@vaalanparturi.fi" data-magnetic>info@vaalanparturi.fi</a>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-col" data-reveal>
+            <h3>Käyntiosoite</h3>
+            <p>Asematie 1<br>91700 Vaala<br>Suomi</p>
+          </div>
+          <div class="contact-col" data-reveal>
+            <h3>Aukioloajat</h3>
+            <table class="hours">
+              <tr><th scope="row">Ma–Pe</th><td>9–17</td></tr>
+              <tr><th scope="row">La</th><td>10–15</td></tr>
+              <tr><th scope="row">Su</th><td>Suljettu</td></tr>
+            </table>
+          </div>
+          <div class="contact-col" data-reveal>
+            <h3>Seuraa meitä</h3>
+            <p class="socials">
+              <a href="https://instagram.com/vaalanparturi" rel="noopener">Instagram</a>
+              <a href="https://facebook.com/vaalanparturi" rel="noopener">Facebook</a>
+              <a href="https://tiktok.com/@vaalanparturi" rel="noopener">TikTok</a>
+              <a href="https://wa.me/358466379131" rel="noopener">WhatsApp</a>
+            </p>
+          </div>
+          <div class="contact-map" data-reveal aria-hidden="true">
+            <svg class="finland-svg" viewBox="0 0 200 320" fill="none">
+              <path class="finland-path" d="M50 310 L39 291 25 281 26 258 28 214 52 192 91 158 69 134 65 106 62 71 12 41 42 58 83 54 94 42 115 12 146 25 140 42 145 57 158 83 167 132 162 161 174 185 188 226 145 269 127 290 81 300 Z"/>
+              <g class="finland-pin" transform="translate(113 171)">
+                <circle class="pin-pulse" r="12"/>
+                <circle class="pin-dot" r="4.5"/>
+              </g>
+              <text class="finland-label" x="126" y="166">Vaala</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="footer-giant" aria-hidden="true"><span data-speed="1.04">VAALAN PARTURI</span></div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="nav-badge nav-badge--light" src="assets/img/badge-light-sm.png" alt="" width="56" height="56" loading="lazy">
+        <img class="nav-badge nav-badge--dark" src="assets/img/badge-dark-sm.png" alt="" width="56" height="56" loading="lazy">
+        <p>Vaalan Parturi · Barber Shop<br><span>Estd 2026 · Vaala, Suomi</span></p>
+      </div>
+      <nav class="footer-links" aria-label="Alatunnisteen valikko">
+        <a href="#palvelut">Palvelut</a>
+        <a href="#hinnasto">Hinnasto</a>
+        <a href="#meista">Meistä</a>
+        <a href="#yhteys">Yhteystiedot</a>
+      </nav>
+      <p class="footer-meta">© <span id="year">2026</span> Vaalan Parturi. Kaikki oikeudet pidätetään.</p>
+    </div>
+  </footer>
+
+  <!-- ======================= BACK TO TOP ======================= -->
+  <button class="totop" id="totop" type="button" aria-label="Takaisin ylös">
+    <svg class="totop-ring" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <circle class="totop-track" cx="24" cy="24" r="21" stroke-width="2"/>
+      <circle class="totop-fill" id="totopFill" cx="24" cy="24" r="21" stroke-width="2"/>
+    </svg>
+    <svg class="totop-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/vendor/gsap.min.js"></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
