@@ -88,6 +88,56 @@
     });
   }
 
+  /* ---------- Booking (Cal.com embed) ---------- */
+  /* Official embed loader: queues calls until embed.js arrives from app.cal.com */
+  (function (C, A, L) {
+    var p = function (a, ar) { a.q.push(ar); };
+    var doc = C.document;
+    C.Cal = C.Cal || function () {
+      var cal = C.Cal; var ar = arguments;
+      if (!cal.loaded) {
+        cal.ns = {}; cal.q = cal.q || [];
+        doc.head.appendChild(doc.createElement('script')).src = A;
+        cal.loaded = true;
+      }
+      if (ar[0] === L) {
+        var api = function () { p(api, arguments); };
+        var namespace = ar[1]; api.q = api.q || [];
+        if (typeof namespace === 'string') {
+          cal.ns[namespace] = cal.ns[namespace] || api;
+          p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]);
+        } else p(cal, ar);
+        return;
+      }
+      p(cal, ar);
+    };
+  })(window, 'https://app.cal.com/embed/embed.js', 'init');
+  Cal('init', { origin: 'https://app.cal.com' });
+  Cal('ui', { styles: { branding: { brandColor: '#C22F23' } }, hideEventTypeDetails: false });
+
+  function syncCalTheme() {
+    var cfg = JSON.stringify({ theme: currentTheme() });
+    document.querySelectorAll('[data-cal-link]').forEach(function (el) {
+      el.setAttribute('data-cal-config', cfg);
+    });
+  }
+  syncCalTheme();
+  if (themeToggle) themeToggle.addEventListener('click', syncCalTheme);
+  themeMedia.addEventListener('change', syncCalTheme);
+
+  /* if the embed cannot load (offline, blocker), fall back to the contact section */
+  document.querySelectorAll('.js-book').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (menuIsOpen()) closeMenu(false);
+      setTimeout(function () {
+        if (!document.querySelector('iframe[src*="cal.com"]')) {
+          var y = document.getElementById('yhteys');
+          if (y) y.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 1200);
+    });
+  });
+
   /* ---------- Progressive slots: hero video + gallery photos ---------- */
   var heroVideo = document.getElementById('heroVideo');
   if (heroVideo && !prefersReduced && location.protocol !== 'file:') {
