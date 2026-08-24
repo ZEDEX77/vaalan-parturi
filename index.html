@@ -90,10 +90,20 @@
         <a href="#yhteys" data-i18n="nav.yhteys">Yhteystiedot</a>
       </nav>
       <div class="nav-actions">
-        <div class="lang" role="group" aria-label="Kieli / Language">
-          <button type="button" data-lang="fi" class="is-active">FI</button>
-          <button type="button" data-lang="sv">SV</button>
-          <button type="button" data-lang="en">EN</button>
+        <div class="lang-dd" id="langDd">
+          <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Kieli / Language">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3Z"></path></svg>
+            <span id="langCur">FI</span>
+          </button>
+          <div class="lang-menu lang" id="langMenu" hidden>
+            <button type="button" data-lang="fi" class="is-active">Suomi</button>
+            <button type="button" data-lang="sv">Svenska</button>
+            <button type="button" data-lang="en">English</button>
+            <button type="button" data-lang="ru">Русский</button>
+            <button type="button" data-lang="uk">Українська</button>
+            <button type="button" data-lang="zh">中文</button>
+            <button type="button" data-lang="ro">Română</button>
+          </div>
         </div>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Vaihda tumma tai vaalea tila" aria-pressed="false">
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
@@ -122,10 +132,14 @@
     </nav>
     <div class="mmenu-foot">
       <button type="button" class="btn btn--solid js-book" data-cal-link="vaalanparturi" data-i18n="nav.varaa">Varaa aika</button>
-      <div class="lang" role="group" aria-label="Kieli / Language">
+      <div class="lang lang--row" role="group" aria-label="Kieli / Language">
         <button type="button" data-lang="fi" class="is-active">FI</button>
         <button type="button" data-lang="sv">SV</button>
         <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="uk">UA</button>
+        <button type="button" data-lang="zh">中文</button>
+        <button type="button" data-lang="ro">RO</button>
       </div>
       <p>Asematie 1 · 91700 Vaala</p>
     </div>
@@ -443,16 +457,26 @@
             <div class="slots-head-right">
               <p id="slotsSub">Seuraavat kolme päivää · Suomen aikaa</p>
               <button type="button" class="slots-today" id="slotsToday" hidden>Tänään</button>
-              <label class="slots-date" id="slotsDateLabel">
+              <button type="button" class="slots-date" id="slotsDateBtn" aria-haspopup="true" aria-expanded="false">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
                 <span id="slotsPickLabel">Valitse päivä</span>
-                <input type="date" id="slotsDate" aria-label="Valitse päivä">
-              </label>
+              </button>
+              <div class="dp" id="dp" hidden></div>
             </div>
           </div>
-          <div class="slots-services" id="slotsServices"></div>
-          <div class="slots-grid" id="slotsGrid" aria-live="polite"></div>
-          <p class="slots-note" data-i18n="slots.note">Valitse palvelu ja vapaa aika — varaus aukeaa aika valmiiksi valittuna.</p>
+          <div class="slots-viewport">
+            <div class="slots-flow" id="slotsFlow">
+              <div class="slots-pane" id="slotsGridPane">
+                <div class="slots-services" id="slotsServices"></div>
+                <div class="slots-grid" id="slotsGrid" aria-live="polite"></div>
+                <div class="slots-actions">
+                  <p class="slots-note" data-i18n="slots.note">Valitse palvelu ja vapaa aika.</p>
+                  <button type="button" class="btn btn--solid slots-next" id="slotsNext" hidden>Seuraava</button>
+                </div>
+              </div>
+              <div class="slots-pane slots-pane--form" id="slotsFormPane" hidden></div>
+            </div>
+          </div>
         </div>
 
         <div class="contact-grid">
