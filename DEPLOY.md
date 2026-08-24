@@ -1,7 +1,8 @@
 # Going live with your own domain
 
-The site is live at **https://zedex77.github.io/vaalan-parturi/** (GitHub Pages,
-free hosting with SSL). This guide connects your own domain to it.
+The site is live at **https://vaalanparturi.fi** (GitHub Pages, free hosting
+with SSL). The old address https://zedex77.github.io/vaalan-parturi/ now
+redirects there. This document records how it was connected.
 
 ## Step 1 — Register the domain ✅ DONE
 
@@ -9,62 +10,43 @@ free hosting with SSL). This guide connects your own domain to it.
 renewal 26.40 €/year). Zoner confirmed the domain on 25.8.2026 — it is active
 and resolving.
 
-## Step 2 — Point the domain at the site ⬅️ YOU ARE HERE
+## Step 2 — Point the domain at the site ✅ DONE 25.8.2026
 
-Right now vaalanparturi.fi shows Zoner's **"Domainparkki"** placeholder page
-(IP 84.34.166.69). That is Zoner's default parking, not our site. It has to be
-replaced with GitHub's addresses.
+Done in Oma Zoner → vaalanparturi.fi → DNS-hallinta
+(https://home.zoner.fi/domains/4262100/dns). Five custom records:
 
-In **Oma Zoner** (my.zoner.fi) → *Omat palvelut / Verkkotunnukset* →
-**vaalanparturi.fi** → **DNS-hallinta** (or *DNS-asetukset*):
+| Type | Name | Value | TTL |
+|---|---|---|---|
+| A | *(empty = root)* | 185.199.108.153 | 600 |
+| A | *(empty = root)* | 185.199.109.153 | 600 |
+| A | *(empty = root)* | 185.199.110.153 | 600 |
+| A | *(empty = root)* | 185.199.111.153 | 600 |
+| CNAME | www | zedex77.github.io | 600 |
 
-1. If a **Domainparkki / pysäköinti** service is switched on, switch it off first
-   — otherwise it keeps re-adding its own A record.
-2. **Delete** the existing A record(s) pointing at `84.34.166.69` (both for `@`
-   and for `www`, if the `www` record is an A record).
-3. **Add** these five records:
+Zoner quirks worth remembering:
+- Zoner's own default records are hidden. Adding a custom record of the **same
+  type** automatically switches the matching default off — the old parking
+  address (84.34.166.69) disappeared on its own, nothing had to be deleted.
+- The CNAME **Alias** field rejects a trailing dot. Use `zedex77.github.io`.
+- Leave the **Nimi** field empty to mean the root domain.
 
-| Type | Name (Nimi) | Value (Arvo / Kohde) |
-|---|---|---|
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| CNAME | www | zedex77.github.io |
-
-Notes:
-- Some panels use an empty name field or the domain itself instead of `@` —
-  they all mean the same thing: the bare domain.
-- The CNAME value must end with a dot in some panels: `zedex77.github.io.`
-- Leave TTL at the default (usually 3600).
-- Do **not** touch the nameservers (zoner.g1-dns.com / .one) — those stay.
-
-Changes usually take 15 minutes to a few hours to spread across the internet.
-
-## Step 3 — Attach the domain to GitHub Pages (Claude does this)
-
-Only **after** step 2 has spread. Check with:
-
-```bash
-nslookup vaalanparturi.fi 8.8.8.8
-```
-
-When that answers 185.199.10x.153 instead of 84.34.166.69, ask Claude
-"attach the domain now" and it runs:
+## Step 3 — Attach the domain to GitHub Pages ✅ DONE 25.8.2026
 
 ```bash
 gh api -X PUT repos/ZEDEX77/vaalan-parturi/pages -f cname=vaalanparturi.fi
-```
-
-Then, once GitHub has issued the free SSL certificate (up to an hour):
-
-```bash
 gh api -X PUT repos/ZEDEX77/vaalan-parturi/pages -F https_enforced=true
 ```
 
-**Important:** this must not be done before step 2 is live — attaching the domain
-makes the github.io address redirect to vaalanparturi.fi, so if the domain still
-pointed at the parking page, the site would be unreachable in the meantime.
+This created a **CNAME** file in the repository root containing
+`vaalanparturi.fi`. **Do not delete that file** — it is what binds the domain to
+the site.
+
+GitHub issued a free SSL certificate covering both `vaalanparturi.fi` and
+`www.vaalanparturi.fi`, and *Enforce HTTPS* is on: plain http now 301-redirects
+to https.
+
+Verified working: apex and www both return HTTP 200 over HTTPS with a valid
+certificate, serving the real site.
 
 ## Step 4 — After the domain works
 
