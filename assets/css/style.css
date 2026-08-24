@@ -308,7 +308,7 @@ em { font-style: italic; }
 .lang-menu button.is-active { color: var(--red); font-weight: 800; }
 /* keep the hidden attribute winning over explicit display values */
 .lang-menu[hidden], .dp[hidden], .slots-pane[hidden], .slots-next[hidden],
-.slots-today[hidden], .btn[hidden] { display: none; }
+.slots-today[hidden], .slots-date[hidden], .btn[hidden] { display: none; }
 
 .lang { display: flex; align-items: center; gap: 2px; }
 .lang--row { flex-wrap: wrap; }

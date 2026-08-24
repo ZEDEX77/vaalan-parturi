@@ -660,7 +660,13 @@
         '<button type="button" data-nav="1"' + (nextOk ? '' : ' disabled') + '><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>' +
         '</div></div><div class="dp-week">' + wk + '</div><div class="dp-days">' + cells + '</div>';
       dp.querySelectorAll('[data-nav]').forEach(function (b) {
-        b.addEventListener('click', function () {
+        b.addEventListener('click', function (e) {
+          /* dpRender() replaces dp.innerHTML, which detaches this very button.
+             Without stopPropagation the click then reaches the document-level
+             "clicked outside" handler, where dp.contains(target) is false for
+             the now-detached node - and the picker would close on every
+             month change. */
+          e.stopPropagation();
           var d = new Date(dpMonth + 'T12:00:00Z');
           d.setUTCMonth(d.getUTCMonth() + parseInt(b.getAttribute('data-nav'), 10));
           dpMonth = d.toISOString().slice(0, 8) + '01';
@@ -704,7 +710,8 @@
       var days = [first, addDaysISO(first, 1), addDaysISO(first, 2)];
       if (subEl) subEl.textContent = startISO ? S.sub2 : S.sub;
       if (pickEl) pickEl.textContent = S.pick;
-      if (todayBtn) { todayBtn.textContent = S.today; todayBtn.hidden = !startISO; }
+      /* while the booking form is open the day controls stay hidden */
+      if (todayBtn) { todayBtn.textContent = S.today; todayBtn.hidden = inForm || !startISO; }
       if (nextBtn) nextBtn.textContent = S.next;
       var html = '';
       days.forEach(function (iso) {
@@ -771,6 +778,11 @@
     /* ----- slide flow: grid <-> form ----- */
     function slideToForm() {
       formPane.hidden = false;
+      /* The date is locked in once the form opens - hide the day controls so
+         the chosen slot cannot drift out from under the booking. */
+      dpClose();
+      if (dateBtn) dateBtn.hidden = true;
+      if (todayBtn) todayBtn.hidden = true;
       requestAnimationFrame(function () { flow.classList.add('is-form'); });
       inForm = true;
     }
@@ -778,6 +790,8 @@
       gridPane.style.height = '';
       gridPane.style.overflow = '';
       gridPane.style.visibility = '';
+      if (dateBtn) dateBtn.hidden = false;
+      if (todayBtn) todayBtn.hidden = !startISO;
       flow.classList.remove('is-form');
       inForm = false;
     }
