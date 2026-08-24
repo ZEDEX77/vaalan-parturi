@@ -292,12 +292,27 @@
       { slug: 'lasten-leikkaus', dur: 30, fi: 'Lasten leikkaus', sv: 'Barnklippning', en: "Kids' haircut" }
     ];
     var STR = {
-      fi: { free: 'Vapaa', taken: 'Varattu', today: 'Tänään', tomorrow: 'Huomenna', days: ['Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'] },
-      sv: { free: 'Ledig', taken: 'Bokad', today: 'Idag', tomorrow: 'Imorgon', days: ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör'] },
-      en: { free: 'Free', taken: 'Booked', today: 'Today', tomorrow: 'Tomorrow', days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] }
+      fi: { free: 'Vapaa', taken: 'Varattu', today: 'Tänään', tomorrow: 'Huomenna', days: ['Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'],
+            sub: 'Seuraavat kolme päivää · Suomen aikaa', sub2: 'Kolme päivää valitusta päivästä · Suomen aikaa', pick: 'Valitse päivä' },
+      sv: { free: 'Ledig', taken: 'Bokad', today: 'Idag', tomorrow: 'Imorgon', days: ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör'],
+            sub: 'Kommande tre dagar · finsk tid', sub2: 'Tre dagar från valt datum · finsk tid', pick: 'Välj datum' },
+      en: { free: 'Free', taken: 'Booked', today: 'Today', tomorrow: 'Tomorrow', days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            sub: 'Next three days · Finnish time', sub2: 'Three days from the chosen date · Finnish time', pick: 'Pick a date' }
     };
     var active = SERVICES[0];
     var cache = {};
+    var startISO = null; /* null = today; otherwise custom YYYY-MM-DD */
+    var dateInput = document.getElementById('slotsDate');
+    var dateLabel = document.getElementById('slotsDateLabel');
+    var todayBtn = document.getElementById('slotsToday');
+    var subEl = document.getElementById('slotsSub');
+    var pickEl = document.getElementById('slotsPickLabel');
+
+    function addDaysISO(iso, n) {
+      var d = new Date(iso + 'T12:00:00Z');
+      d.setUTCDate(d.getUTCDate() + n);
+      return d.toISOString().slice(0, 10);
+    }
 
     function lang() {
       var l = (document.documentElement.lang || 'fi').slice(0, 2);
@@ -330,12 +345,18 @@
 
     function render(data) {
       var L = lang(), S = STR[L];
-      var days = [helsinkiISO(0), helsinkiISO(1), helsinkiISO(2)];
+      var todayISO = helsinkiISO(0), tomorrowISO = helsinkiISO(1);
+      var first = startISO || todayISO;
+      var days = [first, addDaysISO(first, 1), addDaysISO(first, 2)];
+      /* head texts + today-reset visibility */
+      if (subEl) subEl.textContent = startISO ? S.sub2 : S.sub;
+      if (pickEl) pickEl.textContent = S.pick;
+      if (todayBtn) { todayBtn.textContent = S.today; todayBtn.hidden = !startISO; }
       var html = '';
       days.forEach(function (iso, idx) {
         var noonUTC = new Date(iso + 'T12:00:00Z');
         var wd = noonUTC.getUTCDay();
-        var label = idx === 0 ? S.today : (idx === 1 ? S.tomorrow : S.days[wd]);
+        var label = iso === todayISO ? S.today : (iso === tomorrowISO ? S.tomorrow : S.days[wd]);
         var parts = iso.split('-');
         var dateStr = parseInt(parts[2], 10) + '.' + parseInt(parts[1], 10) + '.';
         var open = HOURS[wd][0], close = HOURS[wd][1];
@@ -377,21 +398,55 @@
     }
 
     function load() {
-      if (cache[active.slug]) { render(cache[active.slug]); return; }
+      var first = startISO || helsinkiISO(0);
+      var key = active.slug + '|' + first;
+      if (cache[key]) { render(cache[key]); return; }
       var url = 'https://api.cal.com/v2/slots?eventTypeSlug=' + active.slug + '&username=vaalanparturi' +
-        '&start=' + helsinkiISO(0) + '&end=' + helsinkiISO(3) + '&timeZone=Europe/Helsinki';
+        '&start=' + first + '&end=' + addDaysISO(first, 3) + '&timeZone=Europe/Helsinki';
       fetch(url, { headers: { 'cal-api-version': '2024-09-04' } })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('slots http ' + r.status)); })
         .then(function (json) {
-          cache[active.slug] = (json && json.data) || {};
-          render(cache[active.slug]);
+          cache[key] = (json && json.data) || {};
+          render(cache[key]);
         })
         .catch(function () { /* API unreachable: leave the board hidden */ });
     }
 
+    /* custom date picker */
+    if (dateInput) {
+      dateInput.min = helsinkiISO(0);
+      dateInput.max = addDaysISO(helsinkiISO(0), 180);
+      dateInput.value = helsinkiISO(0);
+      dateInput.addEventListener('change', function () {
+        var v = dateInput.value;
+        if (!v || v <= helsinkiISO(0)) {
+          startISO = null;
+          dateInput.value = helsinkiISO(0);
+        } else {
+          startISO = v;
+        }
+        load();
+      });
+    }
+    if (dateLabel && dateInput) {
+      dateLabel.addEventListener('click', function () {
+        if (typeof dateInput.showPicker === 'function') {
+          try { dateInput.showPicker(); } catch (e) {}
+        }
+      });
+    }
+    if (todayBtn) {
+      todayBtn.addEventListener('click', function () {
+        startISO = null;
+        if (dateInput) dateInput.value = helsinkiISO(0);
+        load();
+      });
+    }
+
     document.addEventListener('vp:lang', function () {
       buildChips();
-      if (cache[active.slug]) render(cache[active.slug]);
+      var key = active.slug + '|' + (startISO || helsinkiISO(0));
+      if (cache[key]) render(cache[key]);
     });
 
     buildChips();
