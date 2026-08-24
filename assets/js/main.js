@@ -35,6 +35,139 @@
   themeMedia.addEventListener('change', syncThemeButton);
   syncThemeButton();
 
+  /* ---------- Languages (fi default, sv, en) ---------- */
+  var DICT = {
+    sv: {
+      'skip': 'Hoppa till innehåll',
+      'nav.palvelut': 'Tjänster', 'nav.hinnasto': 'Priser', 'nav.meista': 'Om oss',
+      'nav.yhteys': 'Kontakt', 'nav.varaa': 'Boka tid',
+      'hero.tagline': 'Precist arbete, avslappnad stil.<br>En klassisk barberare i hjärtat av Vaala — öppning 15.9.2026.',
+      'hero.cta2': 'Se tjänster', 'hero.selaa': 'Bläddra',
+      'marq1': '<span>Precision</span><i>·</i><em>Tradition</em><i>·</i><span>Stil</span><i>·</i><em>Vaala</em><i>·</i><span>Öppning 15.9.2026</span><i>·</i>',
+      'marq2': '<span>Hår</span><i>·</i><em>Skägg</em><i>·</i><span>Varm handduk</span><i>·</i><em>Klassiker</em><i>·</i><span>Vaalan Parturi</span><i>·</i>',
+      'svc.eyebrow': 'Tjänster',
+      'svc.h2': 'Slå dig ner. <em>Vi sköter resten.</em>',
+      'svc.sub': 'Varje besök börjar med ett samtal och slutar med ett genomarbetat resultat. Dra eller bläddra i sidled.',
+      'svc1.t': 'Klassisk klippning', 'svc1.d': 'Sax och maskin, tvätt och styling ingår. En frisyr som håller i vardagen.',
+      'svc2.t': 'Maskinklippning', 'svc2.d': 'Snabb och snygg maskinklippning med ett skär.',
+      'svc3.t': 'Skäggtrimning', 'svc3.d': 'Kantlinje, trimning och skäggolja. Ett skägg med stil.',
+      'svc4.t': 'Klippning + skägg', 'svc4.d': 'Hela paketet på ett besök: hår, skägg och finish.',
+      'svc5.t': 'Klassisk rakning', 'svc5.d': 'Rakning med kniv — varm handduk, förbehandling och lugn.',
+      'svc6.t': 'Barnklippning', 'svc6.d': 'För de minsta kunderna — med tålamod och humor.',
+      'svccta.p': 'Redo för<br><em>stolen?</em>',
+      'cut.kicker': 'Ett resultat som syns', 'cut.word': 'PRECISION', 'cut.note': 'Bläddra — maskinen gör resten.',
+      'price.h2': 'Tydliga priser, <em>inga överraskningar.</em>',
+      'price.r1': 'Klippning <small>(vuxna)</small>', 'price.r2': 'Studerande', 'price.r3': 'Barnklippning',
+      'price.r4': 'Skägg', 'price.r5': 'Klippning + skägg',
+      'price.note': 'Priserna inkluderar moms. Vi tar kort, kontanter och MobilePay.',
+      'about.h2': 'En barberare i <em>hjärtat av Vaala.</em>',
+      'about.lead': 'Vaalan Parturi är en plats där tiden saktar ner i stolen. För oss är varje kund en granne — och varje klippning ett visitkort.',
+      'about.body': 'Vi gör klassiskt barberararbete med modern touch: skarpa linjer, noggrann finish och ärliga råd om vad som passar just dig. Slå dig ner för att prata — eller för att vara tyst.',
+      'val1.t': 'Precision', 'val1.d': 'Millimetrarna avgör. Ofärdigt arbete lämnar aldrig stolen.',
+      'val2.t': 'Tradition', 'val2.d': 'Varm handduk, rakkniv och saxarbete. Kunskap som aldrig åldras.',
+      'val3.t': 'Ingen brådska', 'val3.d': 'Vi reserverar tid för varje kund. Ingen tittar på klockan i stolen.',
+      'about.caption': 'Stolen väntar. <em>Estd 2026.</em>',
+      'styles.eyebrow': 'Stilar', 'styles.h2': 'Klassiker och <em>nya frisyrer.</em>',
+      'sty1.t': 'Klassiker', 'sty1.d': 'Snygg sidbena, finish med sax.',
+      'sty2.t': 'Fade', 'sty2.d': 'Skin fade — skarpa, sömlösa övergångar.',
+      'sty3.t': 'Textur', 'sty3.d': 'Lätt, levande längd på toppen.',
+      'sty4.t': 'Helskägg', 'sty4.d': 'Format, vårdat och skarpt kantat.',
+      'contact.title': 'Boka <em>tid.</em>',
+      'contact.sub': 'Boka online, ring eller titta förbi. Vi bekräftar varje bokning personligen.',
+      'contact.bookbtn': 'Boka online', 'contact.callbtn': 'Ring: 046&nbsp;637&nbsp;91&nbsp;31',
+      'slots.h3': 'Lediga tider', 'slots.sub': 'Kommande tre dagar · finsk tid',
+      'slots.note': 'Välj tjänst och en ledig tid — bokningen öppnas med tiden förvald.',
+      'cg.addr': 'Besöksadress', 'cg.hours': 'Öppettider', 'cg.follow': 'Följ oss',
+      'hours.wk': 'Mån–Fre', 'hours.sa': 'Lör', 'hours.su': 'Sön',
+      'footer.tagline': 'Din lokala barberare, din globala stil.<br>Estd 2026 · Vaala, Finland',
+      'footer.rights': 'Alla rättigheter förbehållna.'
+    },
+    en: {
+      'skip': 'Skip to content',
+      'nav.palvelut': 'Services', 'nav.hinnasto': 'Prices', 'nav.meista': 'About',
+      'nav.yhteys': 'Contact', 'nav.varaa': 'Book now',
+      'hero.tagline': 'Precise work, relaxed attitude.<br>A classic barbershop in the heart of Vaala — grand opening 15.9.2026.',
+      'hero.cta2': 'See services', 'hero.selaa': 'Scroll',
+      'marq1': '<span>Precision</span><i>·</i><em>Tradition</em><i>·</i><span>Style</span><i>·</i><em>Vaala</em><i>·</i><span>Grand opening 15.9.2026</span><i>·</i>',
+      'marq2': '<span>Hair</span><i>·</i><em>Beard</em><i>·</i><span>Hot towel</span><i>·</i><em>Classics</em><i>·</i><span>Vaalan Parturi</span><i>·</i>',
+      'svc.eyebrow': 'Services',
+      'svc.h2': 'Take a seat. <em>We handle the rest.</em>',
+      'svc.sub': 'Every visit starts with a chat and ends with a polished result. Drag or scroll sideways.',
+      'svc1.t': 'Classic haircut', 'svc1.d': 'Scissors and clippers, wash and styling included. A fit that lasts.',
+      'svc2.t': 'Clipper cut', 'svc2.d': 'A quick, clean all-over clipper cut with one guard.',
+      'svc3.t': 'Beard trim', 'svc3.d': 'Line-up, trim and beard oil. A beard with direction.',
+      'svc4.t': 'Cut + beard', 'svc4.d': 'The full package in one visit: hair, beard and finishing.',
+      'svc5.t': 'Traditional shave', 'svc5.d': 'A straight-razor shave — hot towel, pre-shave oils and calm.',
+      'svc6.t': "Kids' haircut", 'svc6.d': 'For our youngest customers — with patience and humour.',
+      'svccta.p': 'Ready for<br><em>the chair?</em>',
+      'cut.kicker': 'Work you can see', 'cut.word': 'PRECISION', 'cut.note': 'Scroll — the clipper does the rest.',
+      'price.h2': 'Clear prices, <em>no surprises.</em>',
+      'price.r1': 'Haircut <small>(adults)</small>', 'price.r2': 'Students', 'price.r3': "Kids' haircut",
+      'price.r4': 'Beard', 'price.r5': 'Cut + beard',
+      'price.note': 'Prices include VAT. We accept card, cash and MobilePay.',
+      'about.h2': 'A barbershop in the <em>heart of Vaala.</em>',
+      'about.lead': 'Vaalan Parturi is a place where time slows down in the chair. To us every customer is a neighbour — and every haircut a calling card.',
+      'about.body': 'We do classic barbering with a modern touch: sharp line-ups, careful finishing and honest advice on what suits you. Sit down for a chat — or for some quiet.',
+      'val1.t': 'Precision', 'val1.d': 'Millimetres matter. Unfinished work never leaves the chair.',
+      'val2.t': 'Tradition', 'val2.d': 'Hot towels, straight razors and scissor work. Skills that never age.',
+      'val3.t': 'No hurry', 'val3.d': 'We reserve time for every customer. No clock-watching in the chair.',
+      'about.caption': 'The chair is waiting. <em>Estd 2026.</em>',
+      'styles.eyebrow': 'Styles', 'styles.h2': 'Classics and <em>fresh cuts.</em>',
+      'sty1.t': 'Classic', 'sty1.d': 'A clean side part, scissor-finished.',
+      'sty2.t': 'Fade', 'sty2.d': 'Skin fade — sharp, seamless transitions.',
+      'sty3.t': 'Texture', 'sty3.d': 'Light, lively length on top.',
+      'sty4.t': 'Full beard', 'sty4.d': 'Shaped, groomed and sharply lined.',
+      'contact.title': 'Book <em>a time.</em>',
+      'contact.sub': 'Book online, call, or drop by. We confirm every booking personally.',
+      'contact.bookbtn': 'Book online', 'contact.callbtn': 'Call: 046&nbsp;637&nbsp;91&nbsp;31',
+      'slots.h3': 'Available times', 'slots.sub': 'Next three days · Finnish time',
+      'slots.note': 'Pick a service and a free time — the booking opens with that time preselected.',
+      'cg.addr': 'Address', 'cg.hours': 'Opening hours', 'cg.follow': 'Follow us',
+      'hours.wk': 'Mon–Fri', 'hours.sa': 'Sat', 'hours.su': 'Sun',
+      'footer.tagline': 'Your local barber, your global style.<br>Estd 2026 · Vaala, Finland',
+      'footer.rights': 'All rights reserved.'
+    }
+  };
+
+  function currentLang() {
+    var l = document.documentElement.lang || 'fi';
+    return l.slice(0, 2);
+  }
+  /* capture Finnish originals once, into data attributes */
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    if (!el.dataset.i18nFi) el.dataset.i18nFi = el.innerHTML;
+  });
+  function applyLang(lang) {
+    if (lang !== 'sv' && lang !== 'en') lang = 'fi';
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('vp-lang', lang); } catch (e) {}
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (lang === 'fi') {
+        if (el.dataset.i18nFi) el.innerHTML = el.dataset.i18nFi;
+      } else if (DICT[lang][key] != null) {
+        el.innerHTML = DICT[lang][key];
+      }
+    });
+    /* PRECISION is one letter wider than TARKKUUS — squeeze it into the stage */
+    document.querySelectorAll('.cut-text').forEach(function (t) {
+      if (lang === 'fi') { t.removeAttribute('textLength'); t.removeAttribute('lengthAdjust'); }
+      else { t.setAttribute('textLength', '1116'); t.setAttribute('lengthAdjust', 'spacingAndGlyphs'); }
+    });
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-lang') === lang);
+    });
+    document.dispatchEvent(new CustomEvent('vp:lang'));
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); });
+  });
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('vp-lang'); } catch (e) {}
+    if (stored === 'sv' || stored === 'en') applyLang(stored);
+  })();
+
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) {
@@ -116,9 +249,12 @@
   Cal('ui', { styles: { branding: { brandColor: '#C22F23' } }, hideEventTypeDetails: false });
 
   function syncCalTheme() {
-    var cfg = JSON.stringify({ theme: currentTheme() });
+    var t = currentTheme();
     document.querySelectorAll('[data-cal-link]').forEach(function (el) {
-      el.setAttribute('data-cal-config', cfg);
+      var cfg = {};
+      try { cfg = JSON.parse(el.getAttribute('data-cal-config') || '{}'); } catch (e) {}
+      cfg.theme = t;
+      el.setAttribute('data-cal-config', JSON.stringify(cfg));
     });
   }
   syncCalTheme();
@@ -142,64 +278,124 @@
   (function initSlotsBoard() {
     var wrap = document.getElementById('slots');
     var grid = document.getElementById('slotsGrid');
-    if (!wrap || !grid || typeof fetch === 'undefined') return;
+    var chipsWrap = document.getElementById('slotsServices');
+    if (!wrap || !grid || !chipsWrap || typeof fetch === 'undefined') return;
 
     /* shop hours by weekday (0 = Sunday), [open, close] in Helsinki time */
     var HOURS = { 0: [10, 16], 1: [10, 18], 2: [10, 18], 3: [10, 18], 4: [10, 18], 5: [10, 18], 6: [10, 17] };
-    var DAY_ABBR = ['Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'];
-    var STEP_MIN = 30;
+    var SERVICES = [
+      { slug: 'klassinen-leikkaus', dur: 30, fi: 'Klassinen leikkaus', sv: 'Klassisk klippning', en: 'Classic haircut' },
+      { slug: 'koneajo', dur: 20, fi: 'Koneajo', sv: 'Maskinklippning', en: 'Clipper cut' },
+      { slug: 'parran-muotoilu', dur: 20, fi: 'Parran muotoilu', sv: 'Skäggtrimning', en: 'Beard trim' },
+      { slug: 'leikkaus-parta', dur: 60, fi: 'Leikkaus + parta', sv: 'Klippning + skägg', en: 'Cut + beard' },
+      { slug: 'parranajo-kuumalla-pyyhkeella', dur: 40, fi: 'Perinteinen parranajo', sv: 'Klassisk rakning', en: 'Traditional shave' },
+      { slug: 'lasten-leikkaus', dur: 30, fi: 'Lasten leikkaus', sv: 'Barnklippning', en: "Kids' haircut" }
+    ];
+    var STR = {
+      fi: { free: 'Vapaa', taken: 'Varattu', today: 'Tänään', tomorrow: 'Huomenna', days: ['Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'] },
+      sv: { free: 'Ledig', taken: 'Bokad', today: 'Idag', tomorrow: 'Imorgon', days: ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör'] },
+      en: { free: 'Free', taken: 'Booked', today: 'Today', tomorrow: 'Tomorrow', days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] }
+    };
+    var active = SERVICES[0];
+    var cache = {};
 
+    function lang() {
+      var l = (document.documentElement.lang || 'fi').slice(0, 2);
+      return STR[l] ? l : 'fi';
+    }
     function helsinkiISO(offsetDays) {
       var d = new Date(Date.now() + offsetDays * 86400000);
       return new Intl.DateTimeFormat('en-CA', {
         timeZone: 'Europe/Helsinki', year: 'numeric', month: '2-digit', day: '2-digit'
       }).format(d);
     }
-    function dayInfo(iso, idx) {
-      var noonUTC = new Date(iso + 'T12:00:00Z');
-      var wd = noonUTC.getUTCDay();
-      var label = idx === 0 ? 'Tänään' : (idx === 1 ? 'Huomenna' : DAY_ABBR[wd]);
-      var parts = iso.split('-');
-      return { wd: wd, label: label, dateStr: parseInt(parts[2], 10) + '.' + parseInt(parts[1], 10) + '.' };
-    }
     function pad(n) { return (n < 10 ? '0' : '') + n; }
 
-    var days = [helsinkiISO(0), helsinkiISO(1), helsinkiISO(2)];
-    var url = 'https://api.cal.com/v2/slots?eventTypeSlug=klassinen-leikkaus&username=vaalanparturi' +
-      '&start=' + days[0] + '&end=' + helsinkiISO(3) + '&timeZone=Europe/Helsinki';
-
-    fetch(url, { headers: { 'cal-api-version': '2024-09-04' } })
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('slots http ' + r.status)); })
-      .then(function (json) {
-        var data = (json && json.data) || {};
-        var html = '';
-        days.forEach(function (iso, idx) {
-          var info = dayInfo(iso, idx);
-          var open = HOURS[info.wd][0], close = HOURS[info.wd][1];
-          var free = {};
-          (data[iso] || []).forEach(function (s) {
-            if (s && s.start) free[s.start.slice(11, 16)] = true;
-          });
-          var cells = '';
-          for (var m = open * 60; m < close * 60; m += STEP_MIN) {
-            var t = pad(Math.floor(m / 60)) + ':' + pad(m % 60);
-            if (free[t]) {
-              cells += '<button type="button" class="slot" data-cal-link="vaalanparturi">' +
-                '<span>' + t + '</span><span class="slot-tag">Vapaa</span></button>';
-            } else {
-              cells += '<span class="slot slot--taken"><span>' + t + '</span>' +
-                '<span class="slot-tag">Varattu</span></span>';
-            }
-          }
-          html += '<div class="slots-day"><p class="slots-day-label">' + info.label +
-            '<small>' + info.dateStr + '</small></p><div class="slots-list">' + cells + '</div></div>';
+    function buildChips() {
+      var L = lang();
+      chipsWrap.innerHTML = SERVICES.map(function (s) {
+        return '<button type="button" class="chip' + (s.slug === active.slug ? ' is-active' : '') +
+          '" data-slug="' + s.slug + '">' + s[L] + '</button>';
+      }).join('');
+      chipsWrap.querySelectorAll('.chip').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var next = SERVICES.filter(function (s) { return s.slug === b.getAttribute('data-slug'); })[0];
+          if (!next || next.slug === active.slug) return;
+          active = next;
+          buildChips();
+          load();
         });
-        grid.innerHTML = html;
-        wrap.hidden = false;
-        if (typeof syncCalTheme === 'function') syncCalTheme();
-        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
-      })
-      .catch(function () { /* API unreachable: leave the board hidden */ });
+      });
+    }
+
+    function render(data) {
+      var L = lang(), S = STR[L];
+      var days = [helsinkiISO(0), helsinkiISO(1), helsinkiISO(2)];
+      var html = '';
+      days.forEach(function (iso, idx) {
+        var noonUTC = new Date(iso + 'T12:00:00Z');
+        var wd = noonUTC.getUTCDay();
+        var label = idx === 0 ? S.today : (idx === 1 ? S.tomorrow : S.days[wd]);
+        var parts = iso.split('-');
+        var dateStr = parseInt(parts[2], 10) + '.' + parseInt(parts[1], 10) + '.';
+        var open = HOURS[wd][0], close = HOURS[wd][1];
+        /* free start times for this service, HH:MM -> full ISO start */
+        var free = {};
+        (data[iso] || []).forEach(function (s) {
+          if (s && s.start) free[s.start.slice(11, 16)] = s.start;
+        });
+        /* expected grid at the service's own interval, plus any extra API times */
+        var times = {};
+        for (var m = open * 60; m + active.dur <= close * 60; m += active.dur) {
+          times[pad(Math.floor(m / 60)) + ':' + pad(m % 60)] = true;
+        }
+        Object.keys(free).forEach(function (t) { times[t] = true; });
+        var cells = '';
+        Object.keys(times).sort().forEach(function (t) {
+          if (free[t]) {
+            var cfg = {
+              theme: currentTheme(),
+              month: iso.slice(0, 7),
+              date: iso,
+              slot: new Date(free[t]).toISOString()
+            };
+            cells += '<button type="button" class="slot" data-cal-link="vaalanparturi/' + active.slug +
+              '" data-cal-config=\'' + JSON.stringify(cfg) + '\'>' +
+              '<span>' + t + '</span><span class="slot-tag">' + S.free + '</span></button>';
+          } else {
+            cells += '<span class="slot slot--taken"><span>' + t + '</span>' +
+              '<span class="slot-tag">' + S.taken + '</span></span>';
+          }
+        });
+        html += '<div class="slots-day"><p class="slots-day-label">' + label +
+          '<small>' + dateStr + '</small></p><div class="slots-list">' + cells + '</div></div>';
+      });
+      grid.innerHTML = html;
+      wrap.hidden = false;
+      if (typeof syncCalTheme === 'function') syncCalTheme();
+      if (hasGsap && typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+    }
+
+    function load() {
+      if (cache[active.slug]) { render(cache[active.slug]); return; }
+      var url = 'https://api.cal.com/v2/slots?eventTypeSlug=' + active.slug + '&username=vaalanparturi' +
+        '&start=' + helsinkiISO(0) + '&end=' + helsinkiISO(3) + '&timeZone=Europe/Helsinki';
+      fetch(url, { headers: { 'cal-api-version': '2024-09-04' } })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('slots http ' + r.status)); })
+        .then(function (json) {
+          cache[active.slug] = (json && json.data) || {};
+          render(cache[active.slug]);
+        })
+        .catch(function () { /* API unreachable: leave the board hidden */ });
+    }
+
+    document.addEventListener('vp:lang', function () {
+      buildChips();
+      if (cache[active.slug]) render(cache[active.slug]);
+    });
+
+    buildChips();
+    load();
   })();
 
   /* ---------- Progressive slots: hero video + gallery photos ---------- */
@@ -449,6 +645,12 @@
     window.addEventListener('resize', remeasure);
     marqueeRemeasure.push(remeasure);
   });
+  document.addEventListener('vp:lang', function () {
+    /* translated marquee text changes chunk width; wait a frame for reflow */
+    requestAnimationFrame(function () {
+      marqueeRemeasure.forEach(function (fn) { fn(); });
+    });
+  });
 
   /* ---------- Services: pinned horizontal scroll (desktop) ---------- */
   var svcTrack = document.getElementById('servicesTrack');
@@ -660,6 +862,9 @@
     initLineReveals();
     marqueeRemeasure.forEach(function (fn) { fn(); });
     ScrollTrigger.refresh();
+  });
+  document.addEventListener('vp:lang', function () {
+    requestAnimationFrame(function () { ScrollTrigger.refresh(); });
   });
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
 })();
