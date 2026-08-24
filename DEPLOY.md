@@ -3,20 +3,17 @@
 The site is live at **https://zedex77.github.io/vaalan-parturi/** (GitHub Pages,
 free hosting with SSL). This guide connects your own domain to it.
 
-## Step 1 — Register the domain (you do this, ~10–15 €/year)
+## Step 1 — Register the domain ✅ DONE
 
-**vaalanparturi.fi is available** (checked 24.8.2026), and so is vaalanparturi.com.
-For a Finnish local business, .fi is the strongest choice.
+**vaalanparturi.fi** was registered via Zoner on 24.8.2026
+(6.60 € first year, renewal 26.40 €/year — a transfer to a cheaper
+registrar is possible later if wanted). Zoner processes the
+registration within 1–3 days (usually hours); a confirmation email
+arrives when it is active.
 
-.fi domains are sold by Traficom-accredited registrars, for example:
+## Step 2 — Point the domain at the site (in Oma Zoner → DNS-hallinta)
 
-- [Louhi](https://www.louhi.fi) · [Zoner](https://www.zoner.fi) · [Domainhotelli](https://www.domainhotelli.fi)
-
-Buy just the domain — no web hosting package needed (GitHub Pages is the hosting).
-
-## Step 2 — Point the domain at the site (in the registrar's DNS settings)
-
-Add these records:
+Once the domain is active, add these records:
 
 | Type | Name | Value |
 |---|---|---|
