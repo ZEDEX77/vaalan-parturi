@@ -1109,6 +1109,137 @@ button.slot.is-selected:hover {
   fill: var(--ink);
 }
 
+/* ---------- Location map ---------- */
+/* Map imagery is rendered from OpenStreetMap data and recoloured to the brand
+   palette, then self-hosted: no third-party requests, no tracking cookies.
+   Two crops exist - landscape for wide screens, portrait for phones - and each
+   has its own pin offset, so `cover` never crops the pin off the shop. */
+.locmap {
+  position: relative;
+  margin-top: clamp(36px, 6vh, 64px);
+}
+.locmap-frame {
+  position: relative;
+  aspect-ratio: 1280 / 768;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background-image: url("../img/map-vaala-light.webp");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 60px rgba(29, 19, 14, 0.14);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .locmap-frame {
+    background-image: url("../img/map-vaala-dark.webp");
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  }
+}
+:root[data-theme="dark"] .locmap-frame {
+  background-image: url("../img/map-vaala-dark.webp");
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+:root[data-theme="light"] .locmap-frame {
+  background-image: url("../img/map-vaala-light.webp");
+  box-shadow: 0 20px 60px rgba(29, 19, 14, 0.14);
+}
+
+/* exact shop position within the landscape crop */
+.locmap-pin {
+  position: absolute;
+  left: 48.28%;
+  top: 40.76%;
+  width: 0;
+  height: 0;
+}
+.locmap-dot, .locmap-pulse {
+  position: absolute;
+  border-radius: 50%;
+  translate: -50% -50%;
+}
+.locmap-dot {
+  width: 18px; height: 18px;
+  background: var(--red);
+  border: 3px solid var(--btn-ink);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+.locmap-pulse {
+  width: 18px; height: 18px;
+  border: 2px solid var(--red);
+  animation: locPulse 2.6s ease-out infinite;
+}
+@keyframes locPulse {
+  0%   { transform: scale(1);   opacity: 0.85; }
+  70%, 100% { transform: scale(4.2); opacity: 0; }
+}
+
+.locmap-card {
+  position: absolute;
+  left: clamp(16px, 3%, 34px);
+  bottom: clamp(16px, 5%, 34px);
+  max-width: min(330px, 76%);
+  padding: clamp(18px, 2.4vw, 26px);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line-strong);
+}
+.locmap-eyebrow {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.locmap-addr {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.locmap-btn { display: inline-flex; }
+.locmap-attr {
+  position: absolute;
+  right: 10px; bottom: 8px;
+  font-size: 0.62rem;
+  color: var(--ink-2);
+  opacity: 0.75;
+}
+.locmap-attr a { color: inherit; text-decoration: underline; }
+
+@media (prefers-reduced-motion: reduce) {
+  .locmap-pulse { animation: none; opacity: 0; }
+}
+
+/* Phones: taller portrait crop, and the card drops below the map instead of
+   covering it. The portrait image has a different pin offset. */
+@media (max-width: 700px) {
+  .locmap-frame {
+    aspect-ratio: 768 / 1024;
+    background-image: url("../img/map-vaala-light-portrait.webp");
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .locmap-frame {
+      background-image: url("../img/map-vaala-dark-portrait.webp");
+    }
+  }
+  :root[data-theme="dark"] .locmap-frame {
+    background-image: url("../img/map-vaala-dark-portrait.webp");
+  }
+  :root[data-theme="light"] .locmap-frame {
+    background-image: url("../img/map-vaala-light-portrait.webp");
+  }
+  .locmap-pin { left: 47.20%; top: 55.64%; }
+  .locmap-card {
+    position: static;
+    max-width: none;
+    margin-top: 16px;
+    backdrop-filter: none;
+    background: var(--card);
+    border-radius: 16px;
+  }
+}
+
 /* ---------- Footer ---------- */
 .footer {
   position: relative;
