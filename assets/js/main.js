@@ -138,6 +138,70 @@
     });
   });
 
+  /* ---------- Availability board (Vapaat ajat) ---------- */
+  (function initSlotsBoard() {
+    var wrap = document.getElementById('slots');
+    var grid = document.getElementById('slotsGrid');
+    if (!wrap || !grid || typeof fetch === 'undefined') return;
+
+    /* shop hours by weekday (0 = Sunday), [open, close] in Helsinki time */
+    var HOURS = { 0: [10, 16], 1: [10, 18], 2: [10, 18], 3: [10, 18], 4: [10, 18], 5: [10, 18], 6: [10, 17] };
+    var DAY_ABBR = ['Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'];
+    var STEP_MIN = 30;
+
+    function helsinkiISO(offsetDays) {
+      var d = new Date(Date.now() + offsetDays * 86400000);
+      return new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Europe/Helsinki', year: 'numeric', month: '2-digit', day: '2-digit'
+      }).format(d);
+    }
+    function dayInfo(iso, idx) {
+      var noonUTC = new Date(iso + 'T12:00:00Z');
+      var wd = noonUTC.getUTCDay();
+      var label = idx === 0 ? 'Tänään' : (idx === 1 ? 'Huomenna' : DAY_ABBR[wd]);
+      var parts = iso.split('-');
+      return { wd: wd, label: label, dateStr: parseInt(parts[2], 10) + '.' + parseInt(parts[1], 10) + '.' };
+    }
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+    var days = [helsinkiISO(0), helsinkiISO(1), helsinkiISO(2)];
+    var url = 'https://api.cal.com/v2/slots?eventTypeSlug=klassinen-leikkaus&username=vaalanparturi' +
+      '&start=' + days[0] + '&end=' + helsinkiISO(3) + '&timeZone=Europe/Helsinki';
+
+    fetch(url, { headers: { 'cal-api-version': '2024-09-04' } })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('slots http ' + r.status)); })
+      .then(function (json) {
+        var data = (json && json.data) || {};
+        var html = '';
+        days.forEach(function (iso, idx) {
+          var info = dayInfo(iso, idx);
+          var open = HOURS[info.wd][0], close = HOURS[info.wd][1];
+          var free = {};
+          (data[iso] || []).forEach(function (s) {
+            if (s && s.start) free[s.start.slice(11, 16)] = true;
+          });
+          var cells = '';
+          for (var m = open * 60; m < close * 60; m += STEP_MIN) {
+            var t = pad(Math.floor(m / 60)) + ':' + pad(m % 60);
+            if (free[t]) {
+              cells += '<button type="button" class="slot" data-cal-link="vaalanparturi">' +
+                '<span>' + t + '</span><span class="slot-tag">Vapaa</span></button>';
+            } else {
+              cells += '<span class="slot slot--taken"><span>' + t + '</span>' +
+                '<span class="slot-tag">Varattu</span></span>';
+            }
+          }
+          html += '<div class="slots-day"><p class="slots-day-label">' + info.label +
+            '<small>' + info.dateStr + '</small></p><div class="slots-list">' + cells + '</div></div>';
+        });
+        grid.innerHTML = html;
+        wrap.hidden = false;
+        if (typeof syncCalTheme === 'function') syncCalTheme();
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      })
+      .catch(function () { /* API unreachable: leave the board hidden */ });
+  })();
+
   /* ---------- Progressive slots: hero video + gallery photos ---------- */
   var heroVideo = document.getElementById('heroVideo');
   if (heroVideo && !prefersReduced && location.protocol !== 'file:') {

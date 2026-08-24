@@ -775,6 +775,69 @@ em { font-style: italic; }
   display: flex; gap: 18px; flex-wrap: wrap;
   margin-block: clamp(30px, 5vh, 48px) clamp(50px, 8vh, 90px);
 }
+/* availability board */
+.slots {
+  margin-bottom: clamp(50px, 8vh, 90px);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: var(--card);
+  padding: clamp(24px, 3.5vw, 44px);
+  box-shadow: var(--shadow);
+}
+.slots-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 26px; }
+.slots-head h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 580;
+}
+.slots-head p { color: var(--muted); font-size: 0.85rem; letter-spacing: 0.08em; }
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.5vw, 34px);
+}
+.slots-day-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.slots-day-label small { color: var(--muted); font-weight: 500; margin-left: 6px; }
+.slots-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.slot {
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+  padding: 8px 6px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+  border: 1.5px solid var(--line-strong);
+  color: var(--ink);
+  background: transparent;
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.slot-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+button.slot { cursor: pointer; }
+button.slot:hover { border-color: var(--red); color: var(--red); transform: translateY(-2px); }
+button.slot .slot-tag { color: var(--red); }
+.slot--taken {
+  border: 1.5px dashed var(--line);
+  color: var(--muted);
+  background: var(--paper-2);
+}
+.slot--taken .slot-tag { color: var(--muted); }
+.slots-note { margin-top: 22px; color: var(--muted); font-size: 0.88rem; }
+
+@media (max-width: 900px) {
+  .slots-grid { grid-template-columns: 1fr; }
+  .slots-list { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 560px) {
+  .slots-list { grid-template-columns: repeat(3, 1fr); }
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr) 220px;
