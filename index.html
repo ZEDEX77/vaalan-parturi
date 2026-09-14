@@ -19,7 +19,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-italic-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/manrope-normal-latin.woff2">
   <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260914-scroll-fix">
   <script>
     // Apply saved theme before first paint to avoid a flash
     (function () {
@@ -114,7 +114,7 @@
             <path d="M20.2 14.5A8.3 8.3 0 0 1 9.5 3.8a8.3 8.3 0 1 0 10.7 10.7Z"/>
           </svg>
         </button>
-        <button type="button" class="btn btn--solid nav-cta js-book" data-cal-link="vaalanparturi" data-magnetic data-i18n="nav.varaa">Varaa aika</button>
+        <button type="button" class="btn btn--solid nav-cta js-book" data-magnetic data-i18n="nav.varaa">Varaa aika</button>
         <button class="burger" id="burger" type="button" aria-label="Avaa valikko" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span>
         </button>
@@ -131,7 +131,7 @@
       <a href="#yhteys"><span>04</span><i data-i18n="nav.yhteys">Yhteystiedot</i></a>
     </nav>
     <div class="mmenu-foot">
-      <button type="button" class="btn btn--solid js-book" data-cal-link="vaalanparturi" data-i18n="nav.varaa">Varaa aika</button>
+      <button type="button" class="btn btn--solid js-book" data-i18n="nav.varaa">Varaa aika</button>
       <div class="lang lang--row" role="group" aria-label="Kieli / Language">
         <button type="button" data-lang="fi" class="is-active">FI</button>
         <button type="button" data-lang="sv">SV</button>
@@ -183,7 +183,7 @@
         </h1>
         <p class="hero-tagline" data-hero-fade data-i18n="hero.tagline">Tarkkaa työtä, rennolla otteella.<br>Klassinen parturi Vaalan sydämessä — avajaiset 15.9.2026.</p>
         <div class="hero-ctas" data-hero-fade>
-          <button type="button" class="btn btn--solid btn--lg js-book" data-cal-link="vaalanparturi" data-magnetic data-i18n="nav.varaa">Varaa aika</button>
+          <button type="button" class="btn btn--solid btn--lg js-book" data-magnetic data-i18n="nav.varaa">Varaa aika</button>
           <a class="btn btn--ghost btn--lg" href="#palvelut" data-magnetic data-i18n="hero.cta2">Katso palvelut</a>
         </div>
       </div>
@@ -221,7 +221,7 @@
                 <circle cx="18" cy="18" r="7"/>
                 <path d="M24 23 52 51M24 41 52 13M52 51l4 4M52 13l4-4"/>
               </svg>
-              <h3 data-i18n="svc1.t">Klassinen leikkaus</h3>
+              <h3 data-i18n="price.r1">Hiustenleikkaus <small>(aikuiset)</small></h3>
               <p data-i18n="svc1.d">Saksilla ja koneella, pesu ja muotoilu päälle. Istuvuus, joka kestää arjen.</p>
               <span class="svc-price">25&nbsp;€</span>
             </article>
@@ -229,28 +229,40 @@
             <article class="svc-card">
               <span class="svc-num">02</span>
               <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="22" y="18" width="20" height="34" rx="6"/>
-                <path d="M24 18v-4h16v4M26 8h12M28 8v6M32 8v6M36 8v6M28 30h8M28 38h8"/>
+                <path d="m8 24 24-12 24 12-24 12Z"/>
+                <path d="M18 29v13c8 6 20 6 28 0V29M56 24v20M52 50l4-6 4 6"/>
               </svg>
-              <h3 data-i18n="svc2.t">Koneajo</h3>
-              <p data-i18n="svc2.d">Nopea ja siisti koko pään koneajo yhdellä terällä.</p>
+              <h3 data-i18n="price.r2">Opiskelijat</h3>
+              <p data-i18n="svc.student.d">Huolellinen hiustenleikkaus opiskelijahintaan. Siisti tyyli opiskeluun ja vapaa-aikaan.</p>
               <span class="svc-price">20&nbsp;€</span>
             </article>
 
             <article class="svc-card">
               <span class="svc-num">03</span>
               <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="32" cy="26" r="12"/>
+                <path d="M22 20c2-6 18-6 20 0M26 16v-5M32 15V9M38 16v-5"/>
+                <path d="M16 54c2-9 8-13 16-13s14 4 16 13"/>
+              </svg>
+              <h3 data-i18n="price.r3">Lasten leikkaus</h3>
+              <p data-i18n="svc6.d">Pienille asiakkaille — kärsivällisyydellä ja huumorilla.</p>
+              <span class="svc-price">20&nbsp;€</span>
+            </article>
+
+            <article class="svc-card">
+              <span class="svc-num">04</span>
+              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 10c0 10 2 16 12 22 10-6 12-12 12-22"/>
                 <path d="M32 32v10M26 38c0 8 2 12 6 16 4-4 6-8 6-16"/>
                 <path d="M22 26c-4 2-6 6-6 10M42 26c4 2 6 6 6 10"/>
               </svg>
-              <h3 data-i18n="svc3.t">Parran muotoilu</h3>
+              <h3 data-i18n="price.r4">Parta</h3>
               <p data-i18n="svc3.d">Rajaus, tasaus ja hoitoöljy. Parta, jolla on suunta.</p>
               <span class="svc-price">15&nbsp;€</span>
             </article>
 
             <article class="svc-card">
-              <span class="svc-num">04</span>
+              <span class="svc-num">05</span>
               <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="13" r="4"/>
                 <circle cx="11" cy="29" r="4"/>
@@ -258,38 +270,14 @@
                 <path d="M32 26v12M26 32h12"/>
                 <path d="M40 36c0 10 4 15 9 15s9-5 9-15M40 36c0-4 2-7 4-7M58 36c0-4-2-7-4-7M45 33c1.5-2 6.5-2 8 0"/>
               </svg>
-              <h3 data-i18n="svc4.t">Leikkaus + parta</h3>
+              <h3 data-i18n="price.r5">Leikkaus + parta</h3>
               <p data-i18n="svc4.d">Koko paketti samalla käynnillä: hiukset, parta ja viimeistely.</p>
               <span class="svc-price">35&nbsp;€</span>
             </article>
 
-            <article class="svc-card">
-              <span class="svc-num">05</span>
-              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 40h44v6a8 8 0 0 1-8 8H18a8 8 0 0 1-8-8Z"/>
-                <path d="M18 40c0-6 4-8 14-8s14 2 14 8"/>
-                <path d="M24 22c0-3 2-3 2-6M32 22c0-3 2-3 2-6M40 22c0-3 2-3 2-6"/>
-              </svg>
-              <h3 data-i18n="svc5.t">Perinteinen parranajo</h3>
-              <p data-i18n="svc5.d">Parranajo veitsellä — kuuma pyyhe, esivoiteet ja rauha.</p>
-              <span class="svc-price">35&nbsp;€</span>
-            </article>
-
-            <article class="svc-card">
-              <span class="svc-num">06</span>
-              <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="32" cy="26" r="12"/>
-                <path d="M22 20c2-6 18-6 20 0M26 16v-5M32 15V9M38 16v-5"/>
-                <path d="M16 54c2-9 8-13 16-13s14 4 16 13"/>
-              </svg>
-              <h3 data-i18n="svc6.t">Lasten leikkaus</h3>
-              <p data-i18n="svc6.d">Pienille asiakkaille — kärsivällisyydellä ja huumorilla.</p>
-              <span class="svc-price">20&nbsp;€</span>
-            </article>
-
             <article class="svc-card svc-card--cta">
               <p data-i18n="svccta.p">Valmiina<br><em>penkkiin?</em></p>
-              <button type="button" class="btn btn--solid js-book" data-cal-link="vaalanparturi" data-magnetic data-i18n="nav.varaa">Varaa aika</button>
+              <button type="button" class="btn btn--solid js-book" data-magnetic data-i18n="nav.varaa">Varaa aika</button>
             </article>
 
           </div>
@@ -447,7 +435,7 @@
         <h2 class="contact-title" data-reveal data-i18n="contact.title">Varaa <em>aika.</em></h2>
         <p class="section-sub" data-reveal data-i18n="contact.sub">Varaa aikasi verkossa, soita tai poikkea kysymään. Vahvistamme jokaisen varauksen henkilökohtaisesti.</p>
         <div class="contact-cta" data-reveal>
-          <button type="button" class="btn btn--solid btn--xl js-book" data-cal-link="vaalanparturi" data-magnetic data-i18n="contact.bookbtn">Varaa aika verkossa</button>
+          <button type="button" class="btn btn--solid btn--xl js-book" data-magnetic data-i18n="contact.bookbtn">Varaa aika verkossa</button>
           <a class="btn btn--ghost btn--xl" href="tel:+358466379131" data-magnetic data-i18n="contact.callbtn">Soita: 046&nbsp;637&nbsp;91&nbsp;31</a>
         </div>
 
@@ -467,14 +455,19 @@
           <div class="slots-viewport">
             <div class="slots-flow" id="slotsFlow">
               <div class="slots-pane" id="slotsGridPane">
-                <div class="slots-services" id="slotsServices"></div>
+                <div class="slots-services">
+                  <label for="slotsService" id="slotsServiceLabel">Valitse palvelu</label>
+                  <select id="slotsService" name="service" aria-describedby="slotsServiceHint"></select>
+                  <p id="slotsServiceHint">Kaikki palvelut 1 tunti · Suomen aikaa</p>
+                </div>
+                <p class="bk-error" id="slotsNotice" role="status"></p>
                 <div class="slots-grid" id="slotsGrid" aria-live="polite"></div>
                 <div class="slots-actions">
                   <p class="slots-note" data-i18n="slots.note">Valitse palvelu ja vapaa aika.</p>
                   <button type="button" class="btn btn--solid slots-next" id="slotsNext" hidden>Seuraava</button>
                 </div>
               </div>
-              <div class="slots-pane slots-pane--form" id="slotsFormPane" hidden></div>
+              <div class="slots-pane slots-pane--form" id="slotsFormPane" tabindex="-1" hidden inert></div>
             </div>
           </div>
         </div>
@@ -567,6 +560,6 @@
   <script src="assets/js/vendor/gsap.min.js"></script>
   <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/js/vendor/lenis.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20260914-scroll-fix"></script>
 </body>
 </html>

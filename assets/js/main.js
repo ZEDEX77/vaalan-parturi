@@ -50,6 +50,7 @@
       'svc.sub': 'Varje besök börjar med ett samtal och slutar med ett genomarbetat resultat. Dra eller skrolla i sidled.',
       'svc1.t': 'Klassisk klippning', 'svc1.d': 'Sax och maskin, tvätt och styling ingår. En frisyr som håller i vardagen.',
       'svc2.t': 'Maskinklippning', 'svc2.d': 'Snabb och snygg maskinklippning av hela huvudet, i en längd.',
+      'svc.student.d': 'En omsorgsfull klippning till studentpris. En snygg frisyr för studier och fritid.',
       'svc3.t': 'Skäggtrimning', 'svc3.d': 'Konturering, trimning och skäggolja. Ett skägg med stil.',
       'svc4.t': 'Klippning + skägg', 'svc4.d': 'Hela paketet på ett besök: hår, skägg och finish.',
       'svc5.t': 'Klassisk rakning', 'svc5.d': 'Rakning med rakkniv — varm handduk, förbehandling och lugn.',
@@ -96,6 +97,7 @@
       'svc.sub': 'Every visit starts with a chat and ends with a polished result. Drag or scroll sideways.',
       'svc1.t': 'Classic haircut', 'svc1.d': 'Scissors and clippers, wash and styling included. A cut that holds up to everyday life.',
       'svc2.t': 'Clipper cut', 'svc2.d': 'A quick, clean all-over clipper cut with a single guard.',
+      'svc.student.d': 'A careful haircut at a student price. Fresh style for study days and time off.',
       'svc3.t': 'Beard trim', 'svc3.d': 'Line-up, trim and beard oil. A beard with direction.',
       'svc4.t': 'Cut + beard', 'svc4.d': 'The full package in one visit: hair, beard and finishing.',
       'svc5.t': 'Traditional shave', 'svc5.d': 'A straight-razor shave — hot towel, pre-shave oils and calm.',
@@ -142,6 +144,7 @@
       'svc.sub': 'Каждый визит начинается с разговора и заканчивается безупречным результатом. Листайте вбок.',
       'svc1.t': 'Классическая стрижка', 'svc1.d': 'Ножницы и машинка, мытьё и укладка включены. Стрижка, которая держится.',
       'svc2.t': 'Стрижка машинкой', 'svc2.d': 'Быстрая и аккуратная стрижка машинкой под одну насадку.',
+      'svc.student.d': 'Аккуратная стрижка по студенческой цене. Стиль для учёбы и свободного времени.',
       'svc3.t': 'Моделирование бороды', 'svc3.d': 'Контур, подравнивание и масло для бороды. Борода с характером.',
       'svc4.t': 'Стрижка + борода', 'svc4.d': 'Полный комплект за один визит: волосы, борода и финальные штрихи.',
       'svc5.t': 'Классическое бритьё', 'svc5.d': 'Бритьё опасной бритвой — горячее полотенце, масла и спокойствие.',
@@ -188,6 +191,7 @@
       'svc.sub': 'Кожен візит починається з розмови й закінчується бездоганним результатом. Гортайте вбік.',
       'svc1.t': 'Класична стрижка', 'svc1.d': 'Ножиці та машинка, миття й укладання включено. Стрижка, що тримається.',
       'svc2.t': 'Стрижка машинкою', 'svc2.d': 'Швидка й акуратна стрижка машинкою під одну насадку.',
+      'svc.student.d': 'Акуратна стрижка за студентською ціною. Стиль для навчання та вільного часу.',
       'svc3.t': 'Моделювання бороди', 'svc3.d': 'Контур, підрівнювання та олія для бороди. Борода з характером.',
       'svc4.t': 'Стрижка + борода', 'svc4.d': 'Повний комплект за один візит: волосся, борода та фініш.',
       'svc5.t': 'Класичне гоління', 'svc5.d': 'Гоління небезпечною бритвою — гарячий рушник, олії та спокій.',
@@ -234,6 +238,7 @@
       'svc.sub': '每次光临都从交流开始，以完美的效果结束。左右滑动查看。',
       'svc1.t': '经典理发', 'svc1.d': '剪刀与电推配合，含洗发与造型。日常也持久有型。',
       'svc2.t': '电推快剪', 'svc2.d': '单一长度、快速利落的全头电推。',
+      'svc.student.d': '学生优惠价，细致好手艺。学习休闲，都能清爽有型。',
       'svc3.t': '胡须修整', 'svc3.d': '修边、修剪加护须油。让胡须更有型。',
       'svc4.t': '理发＋修须', 'svc4.d': '一次搞定：头发、胡须与最后修饰。',
       'svc5.t': '传统剃须', 'svc5.d': '剃刀剃须 — 热毛巾、须前油，享受宁静时光。',
@@ -280,6 +285,7 @@
       'svc.sub': 'Fiecare vizită începe cu o discuție și se încheie cu un rezultat impecabil. Trage sau derulează lateral.',
       'svc1.t': 'Tuns clasic', 'svc1.d': 'Foarfecă și mașină, spălat și styling incluse. O tunsoare care ține.',
       'svc2.t': 'Tuns cu mașina', 'svc2.d': 'Tuns rapid și curat cu mașina, cu o singură sită.',
+      'svc.student.d': 'Un tuns atent la preț de student. Un stil îngrijit pentru studiu și timpul liber.',
       'svc3.t': 'Aranjat barbă', 'svc3.d': 'Contur, egalizare și ulei de barbă. O barbă cu caracter.',
       'svc4.t': 'Tuns + barbă', 'svc4.d': 'Pachetul complet într-o singură vizită: păr, barbă și finisaj.',
       'svc5.t': 'Bărbierit tradițional', 'svc5.d': 'Bărbierit cu brici — prosop cald, uleiuri și liniște.',
@@ -428,6 +434,12 @@
   }
 
   /* ---------- Booking (Cal.com embed) ---------- */
+  /* All appointments use the shop's timezone, including Finnish daylight saving time. */
+  var BOOKING_TIME_ZONE = 'Europe/Helsinki';
+  /* Every service reserves the same one-hour appointment calendar. */
+  var BOOKING_EVENT_SLUG = 'ajanvaraus';
+  var BOOKING_DURATION = 60;
+  var BOOKING_SERVICE_FIELD = 'palvelu';
   /* Official embed loader: queues calls until embed.js arrives from app.cal.com */
   (function (C, A, L) {
     var p = function (a, ar) { a.q.push(ar); };
@@ -460,6 +472,7 @@
       var cfg = {};
       try { cfg = JSON.parse(el.getAttribute('data-cal-config') || '{}'); } catch (e) {}
       cfg.theme = t;
+      cfg['cal.tz'] = BOOKING_TIME_ZONE;
       el.setAttribute('data-cal-config', JSON.stringify(cfg));
     });
   }
@@ -467,16 +480,19 @@
   if (themeToggle) themeToggle.addEventListener('click', syncCalTheme);
   themeMedia.addEventListener('change', syncCalTheme);
 
-  /* if the embed cannot load (offline, blocker), fall back to the contact section */
+  /* Every booking entry point leads to the same service dropdown and calendar. */
   document.querySelectorAll('.js-book').forEach(function (btn) {
     btn.addEventListener('click', function () {
       if (menuIsOpen()) closeMenu(false);
-      setTimeout(function () {
-        if (!document.querySelector('iframe[src*="cal.com"]')) {
-          var y = document.getElementById('yhteys');
-          if (y) y.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 1200);
+      var select = document.getElementById('slotsService');
+      var target = document.getElementById('slots');
+      if (select && target && !target.hidden) {
+        target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+        if (!select.closest('[inert]')) select.focus({ preventScroll: true });
+      } else {
+        Cal('modal', { calLink: 'vaalanparturi/' + BOOKING_EVENT_SLUG,
+          config: { theme: currentTheme(), 'cal.tz': BOOKING_TIME_ZONE } });
+      }
     });
   });
 
@@ -484,7 +500,10 @@
   (function initSlotsBoard() {
     var wrap = document.getElementById('slots');
     var grid = document.getElementById('slotsGrid');
-    var chipsWrap = document.getElementById('slotsServices');
+    var serviceSelect = document.getElementById('slotsService');
+    var serviceLabel = document.getElementById('slotsServiceLabel');
+    var serviceHint = document.getElementById('slotsServiceHint');
+    var slotNotice = document.getElementById('slotsNotice');
     var flow = document.getElementById('slotsFlow');
     var gridPane = document.getElementById('slotsGridPane');
     var formPane = document.getElementById('slotsFormPane');
@@ -494,17 +513,17 @@
     var todayBtn = document.getElementById('slotsToday');
     var subEl = document.getElementById('slotsSub');
     var pickEl = document.getElementById('slotsPickLabel');
-    if (!wrap || !grid || !chipsWrap || !flow || !formPane || typeof fetch === 'undefined') return;
+    if (!wrap || !grid || !serviceSelect || !flow || !formPane || typeof fetch === 'undefined') return;
 
     /* shop hours by weekday (0 = Sunday), [open, close] in Helsinki time */
     var HOURS = { 0: [10, 16], 1: [10, 18], 2: [10, 18], 3: [10, 18], 4: [10, 18], 5: [10, 18], 6: [10, 17] };
+    /* Provider values stay English for organizer emails; labels follow the page language. */
     var SERVICES = [
-      { slug: 'klassinen-leikkaus', dur: 30, fi: 'Klassinen leikkaus', sv: 'Klassisk klippning', en: 'Classic haircut', ru: 'Классическая стрижка', uk: 'Класична стрижка', zh: '经典理发', ro: 'Tuns clasic' },
-      { slug: 'koneajo', dur: 20, fi: 'Koneajo', sv: 'Maskinklippning', en: 'Clipper cut', ru: 'Стрижка машинкой', uk: 'Стрижка машинкою', zh: '电推快剪', ro: 'Tuns cu mașina' },
-      { slug: 'parran-muotoilu', dur: 20, fi: 'Parran muotoilu', sv: 'Skäggtrimning', en: 'Beard trim', ru: 'Моделирование бороды', uk: 'Моделювання бороди', zh: '胡须修整', ro: 'Aranjat barbă' },
-      { slug: 'leikkaus-parta', dur: 60, fi: 'Leikkaus + parta', sv: 'Klippning + skägg', en: 'Cut + beard', ru: 'Стрижка + борода', uk: 'Стрижка + борода', zh: '理发＋修须', ro: 'Tuns + barbă' },
-      { slug: 'parranajo-kuumalla-pyyhkeella', dur: 40, fi: 'Perinteinen parranajo', sv: 'Klassisk rakning', en: 'Traditional shave', ru: 'Классическое бритьё', uk: 'Класичне гоління', zh: '传统剃须', ro: 'Bărbierit tradițional' },
-      { slug: 'lasten-leikkaus', dur: 30, fi: 'Lasten leikkaus', sv: 'Barnklippning', en: "Kids' haircut", ru: 'Детская стрижка', uk: 'Дитяча стрижка', zh: '儿童理发', ro: 'Tuns copii' }
+      { key: 'hiustenleikkaus', providerValue: 'Haircut (adults)', fi: 'Hiustenleikkaus (aikuiset)', sv: 'Klippning (vuxna)', en: 'Haircut (adults)', ru: 'Стрижка (взрослые)', uk: 'Стрижка (дорослі)', zh: '理发 （成人）', ro: 'Tuns (adulți)' },
+      { key: 'opiskelijat', providerValue: 'Students', fi: 'Opiskelijat', sv: 'Studerande', en: 'Students', ru: 'Студенты', uk: 'Студенти', zh: '学生', ro: 'Studenți' },
+      { key: 'lasten-leikkaus', providerValue: "Kids' haircut", fi: 'Lasten leikkaus', sv: 'Barnklippning', en: "Kids' haircut", ru: 'Детская стрижка', uk: 'Дитяча стрижка', zh: '儿童理发', ro: 'Tuns copii' },
+      { key: 'parta', providerValue: 'Beard', fi: 'Parta', sv: 'Skägg', en: 'Beard', ru: 'Борода', uk: 'Борода', zh: '修须', ro: 'Barbă' },
+      { key: 'leikkaus-parta', providerValue: 'Cut + beard', fi: 'Leikkaus + parta', sv: 'Klippning + skägg', en: 'Cut + beard', ru: 'Стрижка + борода', uk: 'Стрижка + борода', zh: '理发＋修须', ro: 'Tuns + barbă' }
     ];
     var STR = {
       fi: { free: 'Vapaa', taken: 'Varattu', today: 'Tänään', tomorrow: 'Huomenna', days: ['Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'],
@@ -559,26 +578,44 @@
     };
     var LOCALES = { fi: 'fi-FI', sv: 'sv-SE', en: 'en-GB', ru: 'ru-RU', uk: 'uk-UA', zh: 'zh-CN', ro: 'ro-RO' };
     var CAL_LOCALES = { fi: 'fi', sv: 'sv', en: 'en', ru: 'ru', uk: 'uk', zh: 'zh-CN', ro: 'ro' };
+    var SERVICE_STR = {
+      fi: { service: 'Valitse palvelu', duration: 'Kaikki palvelut 1 tunti · Suomen aikaa', loading: 'Haetaan vapaita aikoja…', unavailable: 'Vapaita aikoja ei voitu ladata.', retry: 'Yritä uudelleen', expired: 'Tämä aika ei ole enää vapaa. Valitse uusi aika.' },
+      sv: { service: 'Välj tjänst', duration: 'Alla tjänster 1 timme · finsk tid', loading: 'Hämtar lediga tider…', unavailable: 'Det gick inte att hämta lediga tider.', retry: 'Försök igen', expired: 'Tiden är inte längre ledig. Välj en ny tid.' },
+      en: { service: 'Select a service', duration: 'All services 1 hour · Finnish time', loading: 'Loading available times…', unavailable: 'Available times could not be loaded.', retry: 'Try again', expired: 'This time is no longer available. Please choose another time.' },
+      ru: { service: 'Выберите услугу', duration: 'Все услуги — 1 час · по финскому времени', loading: 'Загружаем свободное время…', unavailable: 'Не удалось загрузить свободное время.', retry: 'Попробовать снова', expired: 'Это время уже занято. Выберите другое время.' },
+      uk: { service: 'Оберіть послугу', duration: 'Усі послуги — 1 година · за фінським часом', loading: 'Завантажуємо вільні години…', unavailable: 'Не вдалося завантажити вільні години.', retry: 'Спробувати знову', expired: 'Цей час уже зайнятий. Оберіть інший час.' },
+      zh: { service: '选择服务', duration: '所有服务均为1小时 · 芬兰时间', loading: '正在加载可预约时间…', unavailable: '无法加载可预约时间。', retry: '重试', expired: '此时间已不可预约，请选择其他时间。' },
+      ro: { service: 'Alege serviciul', duration: 'Toate serviciile durează 1 oră · ora Finlandei', loading: 'Se încarcă orele disponibile…', unavailable: 'Orele disponibile nu au putut fi încărcate.', retry: 'Încearcă din nou', expired: 'Această oră nu mai este disponibilă. Alege altă oră.' }
+    };
 
     var active = SERVICES[0];
     var cache = {};
     var startISO = null; /* null = today */
     var selection = null;
     var inForm = false;
+    var bookingState = 'grid';
+    var requestId = 0;
+    var currentData = null;
+    var loading = false;
+    var loadFailed = false;
+    var CACHE_TTL = 30000;
+    var reservedStarts = {};
+    var formDraft = { name: '', email: '', phone: '', note: '' };
 
     function lang() {
       var l = (document.documentElement.lang || 'fi').slice(0, 2);
       return STR[l] ? l : 'fi';
     }
     function T() { return STR[lang()]; }
+    function ST() { return SERVICE_STR[lang()]; }
     function label(svc) { return svc[lang()] || svc.en || svc.fi; }
     function esc(t) {
-      return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     }
     function helsinkiISO(offsetDays) {
       var d = new Date(Date.now() + offsetDays * 86400000);
       return new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Europe/Helsinki', year: 'numeric', month: '2-digit', day: '2-digit'
+        timeZone: BOOKING_TIME_ZONE, year: 'numeric', month: '2-digit', day: '2-digit'
       }).format(d);
     }
     function addDaysISO(iso, n) {
@@ -605,21 +642,41 @@
       if (prev) prev.classList.remove('is-selected');
     }
 
-    /* ----- service chips ----- */
-    function buildChips() {
-      chipsWrap.innerHTML = SERVICES.map(function (svc) {
-        return '<button type="button" class="chip' + (svc.slug === active.slug ? ' is-active' : '') +
-          '" data-slug="' + svc.slug + '">' + esc(label(svc)) + '</button>';
+    /* ----- one service dropdown; changing it keeps the shared calendar ----- */
+    function buildServices() {
+      serviceSelect.innerHTML = SERVICES.map(function (svc) {
+        return '<option value="' + svc.key + '">' + esc(label(svc)) + '</option>';
       }).join('');
-      chipsWrap.querySelectorAll('.chip').forEach(function (b) {
-        b.addEventListener('click', function () {
-          var next = SERVICES.filter(function (svc) { return svc.slug === b.getAttribute('data-slug'); })[0];
-          if (!next || next.slug === active.slug) return;
-          active = next;
-          buildChips();
-          load();
-        });
-      });
+      serviceSelect.value = active.key;
+      serviceLabel.textContent = ST().service;
+      serviceHint.textContent = ST().duration;
+    }
+    serviceSelect.addEventListener('change', function () {
+      var next = SERVICES.filter(function (svc) { return svc.key === serviceSelect.value; })[0];
+      if (!next || inForm) return;
+      active = next;
+      if (selection) selection.svc = active;
+      if (loadFailed) renderLoadState();
+    });
+
+    function fallbackHTML(sel) {
+      var cfg = { theme: currentTheme(), 'cal.tz': BOOKING_TIME_ZONE };
+      cfg[BOOKING_SERVICE_FIELD] = (sel ? sel.svc : active).providerValue;
+      if (sel) {
+        cfg.month = sel.iso.slice(0, 7);
+        cfg.date = sel.iso;
+        cfg.slot = new Date(sel.start).toISOString();
+      }
+      return '<button type="button" class="btn btn--ghost" data-cal-link="vaalanparturi/' + BOOKING_EVENT_SLUG +
+        '" data-cal-config="' + esc(JSON.stringify(cfg)) + '">' + esc(T().errorBtn) + '</button>';
+    }
+
+    function renderLoadState() {
+      grid.setAttribute('aria-busy', loading ? 'true' : 'false');
+      grid.innerHTML = '<div class="slots-status"><p>' + esc(loading ? ST().loading : ST().unavailable) + '</p>' +
+        (loading ? '' : '<div class="slots-status-actions"><button type="button" class="btn btn--solid" id="slotsRetry">' + esc(ST().retry) + '</button>' + fallbackHTML() + '</div>') + '</div>';
+      var retry = document.getElementById('slotsRetry');
+      if (retry) retry.addEventListener('click', function () { load(true); });
     }
 
     /* ----- custom date picker ----- */
@@ -698,13 +755,21 @@
       window.addEventListener('keydown', function (e) { if (e.key === 'Escape') dpClose(); });
     }
     if (todayBtn) {
-      todayBtn.addEventListener('click', function () { startISO = null; load(); });
+      todayBtn.addEventListener('click', function () { if (!inForm) { startISO = null; load(); } });
     }
 
     /* ----- availability grid ----- */
-    function render(data) {
+    function isReserved(start) {
+      var instant = new Date(start).getTime();
+      return Object.keys(reservedStarts).some(function (reserved) {
+        return Math.abs(instant - Number(reserved)) < BOOKING_DURATION * 60000;
+      });
+    }
+    function render(data, keepSelection) {
+      var previousHeight = wrap.offsetHeight;
       var S = T();
-      clearSelection();
+      var previousSelection = keepSelection ? selection : null;
+      if (!keepSelection) clearSelection();
       var todayISO = helsinkiISO(0), tomorrowISO = helsinkiISO(1);
       var first = startISO || todayISO;
       var days = [first, addDaysISO(first, 1), addDaysISO(first, 2)];
@@ -720,10 +785,13 @@
         var open = HOURS[wd][0], close = HOURS[wd][1];
         var free = {};
         (data[iso] || []).forEach(function (x) {
-          if (x && x.start) free[x.start.slice(11, 16)] = x.start;
+          if (!x || !x.start || !Number.isFinite(new Date(x.start).getTime()) || isReserved(x.start)) return;
+          var time = new Intl.DateTimeFormat('en-GB', { timeZone: BOOKING_TIME_ZONE,
+            hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date(x.start));
+          free[time] = x.start;
         });
         var times = {};
-        for (var m = open * 60; m + active.dur <= close * 60; m += active.dur) {
+        for (var m = open * 60; m + BOOKING_DURATION <= close * 60; m += BOOKING_DURATION) {
           times[pad(Math.floor(m / 60)) + ':' + pad(m % 60)] = true;
         }
         Object.keys(free).forEach(function (t) { times[t] = true; });
@@ -739,15 +807,19 @@
         html += '<div class="slots-day"><p class="slots-day-label">' + dayLabel +
           '<small>' + fmtDate(iso) + '</small></p><div class="slots-list">' + cells + '</div></div>';
       });
+      grid.setAttribute('aria-busy', loading ? 'true' : 'false');
+      if (nextBtn) nextBtn.disabled = loading;
       grid.innerHTML = html;
       grid.querySelectorAll('button.slot').forEach(function (b) {
+        if (previousSelection && new Date(b.getAttribute('data-start')).getTime() === new Date(previousSelection.start).getTime()) b.classList.add('is-selected');
         b.addEventListener('click', function () {
+          if (loading || inForm) return;
           var prev = grid.querySelector('.slot.is-selected');
           if (prev) prev.classList.remove('is-selected');
           if (prev === b) { selection = null; nextBtn.hidden = true; return; }
           b.classList.add('is-selected');
           selection = {
-            slug: active.slug, dur: active.dur, svc: active,
+            svc: active,
             iso: b.getAttribute('data-iso'),
             hhmm: b.getAttribute('data-hhmm'),
             start: b.getAttribute('data-start')
@@ -755,29 +827,83 @@
           nextBtn.hidden = false;
         });
       });
+      if (previousSelection && !grid.querySelector('.slot.is-selected')) clearSelection();
       wrap.hidden = false;
       if (typeof syncCalTheme === 'function') syncCalTheme();
-      if (hasGsap && typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      /* Same-height availability updates must not recalculate every pinned section. */
+      if (hasGsap && !prefersReduced && Math.abs(wrap.offsetHeight - previousHeight) > 1) {
+        ScrollTrigger.refresh(true);
+      }
     }
 
-    function load() {
+    function load(force, restoreSelection, onReady, background) {
+      if (inForm) return;
+      var keepGrid = Boolean(background && currentData);
       var first = startISO || helsinkiISO(0);
-      var key = active.slug + '|' + first;
-      if (cache[key]) { render(cache[key]); return; }
-      var url = 'https://api.cal.com/v2/slots?eventTypeSlug=' + active.slug + '&username=vaalanparturi' +
-        '&start=' + first + '&end=' + addDaysISO(first, 3) + '&timeZone=Europe/Helsinki';
-      fetch(url, { headers: { 'cal-api-version': '2024-09-04' } })
+      var key = first;
+      var id = ++requestId;
+      if (!keepGrid) clearSelection();
+      if (!keepGrid && slotNotice) { slotNotice.textContent = ''; slotNotice.classList.remove('is-visible'); }
+      loadFailed = false;
+      if (!force && cache[key] && Date.now() - cache[key].fetchedAt < CACHE_TTL) {
+        loading = false;
+        currentData = cache[key].data;
+        render(currentData);
+        return;
+      }
+      loading = true;
+      wrap.hidden = false;
+      if (keepGrid) {
+        /* Window focus must not collapse the page or shift its scroll position. */
+        grid.setAttribute('aria-busy', 'true');
+        if (nextBtn) nextBtn.disabled = true;
+      } else {
+        currentData = null;
+        renderLoadState();
+      }
+      if (subEl) subEl.textContent = startISO ? T().sub2 : T().sub;
+      if (pickEl) pickEl.textContent = T().pick;
+      if (todayBtn) { todayBtn.textContent = T().today; todayBtn.hidden = !startISO; }
+      var url = 'https://api.cal.com/v2/slots?eventTypeSlug=' + BOOKING_EVENT_SLUG + '&username=vaalanparturi' +
+        '&start=' + first + '&end=' + addDaysISO(first, 3) + '&timeZone=' + encodeURIComponent(BOOKING_TIME_ZONE);
+      fetch(url, { cache: 'no-store', headers: { 'cal-api-version': '2024-09-04' } })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('slots http ' + r.status)); })
         .then(function (json) {
-          cache[key] = (json && json.data) || {};
-          render(cache[key]);
+          if (!json || !json.data || typeof json.data !== 'object') throw new Error('invalid slots response');
+          if (id !== requestId || inForm) return;
+          cache[key] = { data: json.data, fetchedAt: Date.now() };
+          loading = false;
+          currentData = json.data;
+          if (restoreSelection) {
+            restoreSelection.svc = active;
+            selection = restoreSelection;
+          }
+          render(currentData, keepGrid || Boolean(restoreSelection));
+          if (onReady) onReady();
         })
-        .catch(function () { /* API unreachable: leave the board hidden */ });
+        .catch(function () {
+          if (id !== requestId || inForm) return;
+          loading = false;
+          if (keepGrid) {
+            delete cache[key];
+            grid.setAttribute('aria-busy', 'false');
+            if (nextBtn) nextBtn.disabled = false;
+            /* Next always revalidates before accepting a time from this grid. */
+            return;
+          }
+          loadFailed = true;
+          renderLoadState();
+        });
     }
 
     /* ----- slide flow: grid <-> form ----- */
     function slideToForm() {
       formPane.hidden = false;
+      formPane.inert = false;
+      gridPane.inert = true;
+      gridPane.style.height = '0px';
+      gridPane.style.overflow = 'hidden';
+      gridPane.style.visibility = 'hidden';
       /* The date is locked in once the form opens - hide the day controls so
          the chosen slot cannot drift out from under the booking. */
       dpClose();
@@ -785,15 +911,24 @@
       if (todayBtn) todayBtn.hidden = true;
       requestAnimationFrame(function () { flow.classList.add('is-form'); });
       inForm = true;
+      bookingState = 'form';
     }
     function slideToGrid() {
+      if (bookingState === 'submitting') return;
+      if (bookingState === 'form' || bookingState === 'conflict') captureFormDraft();
       gridPane.style.height = '';
       gridPane.style.overflow = '';
       gridPane.style.visibility = '';
+      gridPane.inert = false;
+      formPane.inert = true;
+      formPane.hidden = true;
       if (dateBtn) dateBtn.hidden = false;
       if (todayBtn) todayBtn.hidden = !startISO;
       flow.classList.remove('is-form');
       inForm = false;
+      bookingState = 'grid';
+      load(true);
+      serviceSelect.focus({ preventScroll: true });
     }
     flow.addEventListener('transitionend', function (e) {
       if (e.target !== flow) return;
@@ -813,18 +948,22 @@
       var dayLabel = sel.iso === todayISO ? S.today : (sel.iso === tomorrowISO ? S.tomorrow : S.days[wd]);
       return '<div class="bk-summary"><strong>' + esc(label(sel.svc)) + '</strong>' +
         '<span>' + dayLabel + ' ' + fmtDate(sel.iso) + '</span>' +
-        '<em>' + sel.hhmm + '–' + endTime(sel.hhmm, sel.dur) + '</em></div>';
+        '<em>' + sel.hhmm + '–' + endTime(sel.hhmm, BOOKING_DURATION) + '</em></div>';
     }
 
-    function renderForm(keep) {
-      if (!selection) return;
-      var S = T();
-      var old = keep ? {
+    function captureFormDraft() {
+      formDraft = {
         name: (document.getElementById('bkName') || {}).value || '',
         email: (document.getElementById('bkEmail') || {}).value || '',
         phone: (document.getElementById('bkPhone') || {}).value || '',
         note: (document.getElementById('bkNote') || {}).value || ''
-      } : { name: '', email: '', phone: '', note: '' };
+      };
+    }
+    function renderForm(keep) {
+      if (!selection) return;
+      var S = T();
+      if (keep) captureFormDraft();
+      var old = formDraft;
       formPane.innerHTML =
         '<h4 class="bk-title" style="font-family: Fraunces, Georgia, serif; font-size: 1.5rem; font-weight: 580; margin-bottom: 18px;">' + S.formTitle + '</h4>' +
         summaryHTML(S) +
@@ -841,10 +980,26 @@
         '</div>';
       document.getElementById('bkBack').addEventListener('click', slideToGrid);
       document.getElementById('bkSubmit').addEventListener('click', submitBooking);
+      setFormBusy(bookingState === 'submitting');
+      if (bookingState === 'conflict') {
+        var error = document.getElementById('bkError');
+        error.textContent = ST().expired;
+        error.classList.add('is-visible');
+        document.getElementById('bkSubmit').disabled = true;
+      }
+    }
+
+    function setFormBusy(busy) {
+      formPane.setAttribute('aria-busy', busy ? 'true' : 'false');
+      formPane.querySelectorAll('input, textarea, button').forEach(function (control) { control.disabled = busy; });
+      var btn = document.getElementById('bkSubmit');
+      if (btn) btn.textContent = busy ? T().sending : T().submit;
     }
 
     function renderSuccess() {
       var S = T();
+      bookingState = 'success';
+      formPane.setAttribute('aria-busy', 'false');
       formPane.innerHTML =
         '<div class="bk-success">' +
         '<div class="bk-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>' +
@@ -855,8 +1010,6 @@
         '</div>';
       document.getElementById('bkDone').addEventListener('click', function () {
         slideToGrid();
-        selection = null;
-        load();
       });
     }
 
@@ -869,13 +1022,13 @@
     }
 
     function submitBooking() {
+      if (!selection || bookingState !== 'form') return;
       var S = T();
       var name = (document.getElementById('bkName').value || '').trim();
       var email = (document.getElementById('bkEmail').value || '').trim();
       var phone = (document.getElementById('bkPhone').value || '').trim();
       var note = (document.getElementById('bkNote').value || '').trim();
       var err = document.getElementById('bkError');
-      var btn = document.getElementById('bkSubmit');
       err.classList.remove('is-visible');
       if (!name || !email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/) || phone.replace(/\D/g, '').length < 6) {
         err.textContent = S.required;
@@ -883,21 +1036,23 @@
         return;
       }
       var sel = selection;
-      btn.disabled = true;
-      btn.textContent = S.sending;
+      bookingState = 'submitting';
+      setFormBusy(true);
       var body = {
         start: new Date(sel.start).toISOString(),
-        eventTypeSlug: sel.slug,
+        eventTypeSlug: BOOKING_EVENT_SLUG,
         username: 'vaalanparturi',
         attendee: {
           name: name,
           email: email,
-          timeZone: 'Europe/Helsinki',
+          timeZone: BOOKING_TIME_ZONE,
+          /* This controls the customer's email; organizer emails use the Cal.com account language. */
           language: CAL_LOCALES[lang()] || 'fi',
           phoneNumber: normalizePhone(phone)
         },
         bookingFieldsResponses: { attendeePhoneNumber: normalizePhone(phone) }
       };
+      body.bookingFieldsResponses[BOOKING_SERVICE_FIELD] = sel.svc.providerValue;
       if (note) body.bookingFieldsResponses.notes = note;
       fetch('https://api.cal.com/v2/bookings', {
         method: 'POST',
@@ -905,42 +1060,74 @@
         body: JSON.stringify(body)
       })
         .then(function (r) {
-          if (!r.ok) return Promise.reject(new Error('book http ' + r.status));
+          if (!r.ok) {
+            return r.json().catch(function () { return {}; }).then(function (json) {
+              var error = new Error('book http ' + r.status);
+              error.status = r.status;
+              var detail = JSON.stringify(json);
+              error.conflict = r.status === 409 || /no_available_users_found_error|already has booking at this time|not available/i.test(detail);
+              throw error;
+            });
+          }
           return r.json();
         })
         .then(function () {
-          /* the slot is now pending: drop cached availability for this service */
-          Object.keys(cache).forEach(function (k) {
-            if (k.indexOf(sel.slug + '|') === 0) delete cache[k];
-          });
+          /* A pending appointment occupies this hour for every service. */
+          cache = {};
+          currentData = null;
+          reservedStarts[new Date(sel.start).getTime()] = true;
+          formDraft = { name: '', email: '', phone: '', note: '' };
           renderSuccess();
         })
-        .catch(function () {
-          btn.disabled = false;
-          btn.textContent = S.submit;
-          err.innerHTML = esc(S.error) + ' <button type="button" class="btn btn--ghost" style="margin-top:10px; padding:9px 18px; font-size:0.85rem;" data-cal-link="vaalanparturi/' + sel.slug +
-            "\" data-cal-config='" + JSON.stringify({ theme: currentTheme(), month: sel.iso.slice(0, 7), date: sel.iso, slot: new Date(sel.start).toISOString() }) + "'>" + esc(S.errorBtn) + '</button>';
-          err.classList.add('is-visible');
+        .catch(function (error) {
+          cache = {};
+          currentData = null;
+          bookingState = error.conflict ? 'conflict' : 'form';
+          setFormBusy(false);
+          var currentError = document.getElementById('bkError');
+          currentError.innerHTML = esc(error.conflict ? ST().expired : T().error) + (error.conflict ? '' : ' ' + fallbackHTML(sel));
+          currentError.classList.add('is-visible');
+          if (error.conflict) {
+            reservedStarts[new Date(sel.start).getTime()] = true;
+            document.getElementById('bkSubmit').disabled = true;
+            document.getElementById('bkBack').focus({ preventScroll: true });
+          }
         });
     }
 
     if (nextBtn) {
       nextBtn.addEventListener('click', function () {
-        if (!selection) return;
-        renderForm(false);
-        slideToForm();
+        if (!selection || loading || inForm) return;
+        /* Recheck the shared calendar before opening customer details. */
+        load(true, selection, function () {
+          if (!selection) {
+            if (slotNotice) { slotNotice.textContent = ST().expired; slotNotice.classList.add('is-visible'); }
+            return;
+          }
+          renderForm(false);
+          slideToForm();
+        });
       });
     }
 
     document.addEventListener('vp:lang', function () {
-      buildChips();
+      buildServices();
       if (!dp.hidden) dpRender();
-      if (inForm && selection) { renderForm(true); return; }
-      var key = active.slug + '|' + (startISO || helsinkiISO(0));
-      if (cache[key]) render(cache[key]);
+      if (inForm && selection) {
+        if (bookingState === 'success') renderSuccess();
+        else renderForm(true);
+        return;
+      }
+      if (currentData) render(currentData, true);
+      else if (loading || loadFailed) renderLoadState();
     });
 
-    buildChips();
+    function refreshAvailability() {
+      if (!document.hidden && !inForm && !loading) load(true, selection, null, true);
+    }
+    window.addEventListener('focus', refreshAvailability);
+    document.addEventListener('visibilitychange', refreshAvailability);
+    buildServices();
     load();
   })();
 

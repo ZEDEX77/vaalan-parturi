@@ -57,10 +57,39 @@ certificate, serving the real site.
 
 ## Updating the site later
 
-Edit the files, then:
+GitHub Pages publishes the repository root from the `main` branch. Review the
+changes and run both regression suites with Node.js and Playwright available
+(set `PLAYWRIGHT_BROWSER_EXECUTABLE` to use Brave). The tests mock external
+booking requests and do not create appointments.
 
 ```bash
-git add -A && git commit -m "update" && git push
+git status --short
+git diff --check
+node tests/booking.test.cjs
+node tests/scroll.test.cjs
 ```
 
-The live site updates automatically in about a minute.
+After all checks pass, stage only reviewed files. Adjust this explicit list to
+the files changed in that release; keep private working notes out of the commit.
+
+```bash
+git add -- index.html assets/css/style.css assets/js/main.js README.md DEPLOY.md .gitignore tests/booking.test.cjs tests/scroll.test.cjs
+git diff --cached
+git commit -m "Update appointment booking and scroll behavior"
+git push origin main
+```
+
+Wait for the GitHub Pages deployment to succeed, then verify
+https://vaalanparturi.fi/ serves the new files and the booking dropdown,
+availability, and scrolling work. Preserve `CNAME` and the existing domain
+settings.
+
+To roll back a faulty release, replace `RELEASE_COMMIT` with its commit hash:
+
+```bash
+git revert RELEASE_COMMIT
+git push origin main
+```
+
+Verify the rollback deployment and live site too. A Git revert restores website
+files only; Cal.com settings and existing appointments are managed separately.
